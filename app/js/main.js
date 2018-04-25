@@ -306,7 +306,91 @@
 
     preLoader.preImg();
 
-  
+
+
+
+    window.revSlider = $('.rev-slider') || null;
+    var bannerSlider =  $('.rev-slider').hasClass("banner-slider") || null;
+
+    onResized(function(){
+
+      if( revSlider )
+       revSlider.revolution({
+          delay:6000,
+          startwidth: checkSm() ? $( window ).width() : checkMd() ? 970 : 1170,
+          startheight: checkSm() ? 200 :  bannerSlider ? 490 : 600,
+          autoHeight:"off",
+          fullScreenAlignForce:"off",
+
+          onHoverStop:"on",
+
+          thumbWidth:100,
+          thumbHeight:50,
+          thumbAmount:3,
+
+          hideThumbsOnMobile:"on",
+          hideBulletsOnMobile:"on",
+          hideArrowsOnMobile:"on",
+          hideThumbsUnderResoluition:0,
+
+          hideThumbs: -1,
+          hideTimerBar:"on",
+
+          keyboardNavigation:"off",
+
+          navigationType:"bullet",
+          navigationArrows:"solo",  //solo
+          navigationStyle:"round",
+
+          navigationHAlign:"center",
+          navigationVAlign:"bottom",
+          navigationHOffset: 0,
+          navigationVOffset: 30,
+
+          soloArrowLeftHalign:"left",
+          soloArrowLeftValign:"center",
+          soloArrowLeftHOffset:30,
+          soloArrowLeftVOffset:0,
+
+          soloArrowRightHalign:"right",
+          soloArrowRightValign:"center",
+          soloArrowRightHOffset:30,
+          soloArrowRightVOffset:0,
+
+
+          touchenabled: "off",
+          swipe_velocity:"0.7",
+          swipe_max_touches:"1",
+          swipe_min_touches:"1",
+          drag_block_vertical: "false",
+
+          stopAtSlide:-1,
+          stopAfterLoops:-1,
+          hideCaptionAtLimit:0,
+          hideAllCaptionAtLilmit:0,
+          hideSliderAtLimit:0,
+
+          fullWidth:"on",
+          fullScreen:"off",
+          fullScreenOffsetContainer: "#header",
+
+          dottedOverlay:"none",
+          forceFullWidth:"off",
+
+          shadow:0
+
+        })
+      
+
+    });
+    if( revSlider.length ){
+      var prevnext = $(".tparrows").append('<svg viewBox="0 0 100 100"><path d="M 10,50 L 50,85 L 55,75 L 30,50  L 55,25 L 50,15 Z" class="arrow"></path></svg>')
+      $(".arrow-container.container").append( prevnext ).css( "top", "350" );
+      $(".arrow-container.container").css( "top", "-"+( $(".rev-slider").css("height").match(/(\d+)/gim)[0]/2 ) + "px" );
+    }
+
+
+    
   });
 })(jQuery);
 
