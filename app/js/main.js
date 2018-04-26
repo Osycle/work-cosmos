@@ -101,6 +101,54 @@
       x3: 30
     };
 
+    var brandMenu = $('.brands-menu-carousel .carousel-items').flickity({
+        imagesLoaded: true,
+        autoPlay: false,
+        arrowShape: arrowStyle,
+        initialIndex: 0,
+        prevNextButtons: false,
+        draggable: false,
+        friction: 1,
+        selectedAttraction: 1,
+        wrapAround: true, 
+        pageDots: false,
+        contain: true,
+        percentPosition: true,
+        cellAlign: 'center'
+      });
+    $("[hover-target]").hover(function(e){
+      var that = $(this);
+      var targetCLass = that.attr("hover-target");
+      $(targetCLass).addClass("hovered");
+      window.brandMenuHovered = true;
+    }, function(){
+        window.that = $(this);
+        function closeHover(){
+          var targetCLass = $(that).attr("hover-target");
+          $(targetCLass).removeClass("hovered");
+        }
+    })
+    setTimeout(function(){(function( that ){
+      $(".submenu-brands").hover(function(){
+        
+      }, function(){
+        
+      })
+      
+      
+    })(that)}, 300)
+
+    $('.button-group').on( 'click', 'li', function() {
+      var that = $(this);
+      var selector = that.attr('data-selector');
+      that.addClass("is-selected");
+      that.siblings().removeClass("is-selected");
+
+      console.log( $(this).siblings() );
+      brandMenu.flickity( 'selectCell', selector );
+    });
+
+
     if( $(".short-partners-carousel .carousel-items figure").length > 3 )
       $('.short-partners-carousel .carousel-items').flickity({
         imagesLoaded: true,
@@ -318,7 +366,7 @@
        revSlider.revolution({
           delay:6000,
           startwidth: checkSm() ? $( window ).width() : checkMd() ? 970 : 1170,
-          startheight: checkSm() ? 200 :  bannerSlider ? 490 : 600,
+          startheight: checkSm() ? 200 :  bannerSlider ? 350 : 400,
           autoHeight:"off",
           fullScreenAlignForce:"off",
 

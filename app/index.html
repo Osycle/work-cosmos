@@ -23,6 +23,7 @@
 			<p>Ваш браузер не поддерживает скрипты!
 				<br/> Пожалуйста подключите в настройках браузера Javascript</p>
 		</noscript>
+
 		<div class="form-modal modal fade animated" id="formModal" tabindex="-1" role="dialog">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
@@ -61,6 +62,38 @@
 				</div>
 			</div>
 		</div>
+		<!-- basket-modal -->
+		<div class="basket-modal modal fade animated" id="agreementModal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<button type="button" class="btn" data-dismiss="modal"><span class="icon-bar"></span><span class="icon-bar"></span></button>
+					<div class="modal-body">
+						<div class="text-content parag-m-v-5">
+							<div class="basket-modal-items">
+
+								<figure class="col-md-12">
+									<div class="img-content pie-md-4">
+										<img src="img/productions/1.jpg" alt="">
+									</div>
+									<div class="desc-content pie-md-8">
+										<h3>Bourjois</h3>
+										<p>Помада Rouge Edition Velvet</p>
+										<div class="price color-1 text-uppercase">
+											<b>123.400 Сум</b>
+										</div>
+										<div class="btn-contnet m-v-15">
+											<a href="#" title="" underline>Удалить</a>
+										</div>
+									</div>
+								</figure>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- HEADER -->
 		<div class="header-hidden"></div>
 		<header id="header" class="header-scroll" data-aos="fade">
@@ -98,6 +131,7 @@
 								</div>
 							</a>
 						</div>
+
 						<div class="search-nav-content pie-md-4 color-black">
 							<form action="">
 								<div class="col-md-12 search-input">
@@ -123,7 +157,7 @@
 	
 						<div class="row">
 											
-							<div class="logo pie-md-3 p-h-15">
+							<div class="logo pie-md-2 p-h-15">
 								<div class="img-content pie-md pie-dry">
 									<a href="index.html">
 										<img src="img/logo.png" style="width: 170px;">
@@ -131,21 +165,21 @@
 								</div>
 							</div>
 
-							<div class="phones pie-md-3 p-h-15 hover-color-1">
+							<div class="phones pie-md-3 p-h-15 p-l-60 hover-color-1">
 								<div class="header-phone">
 									<p><big><b>+998 (97) 777-44-44</b></big></p>
 									<p class="m-v-5"><small>Обратный звонок</small></p>
 								</div>
 							</div>
 							
-							<div class="phones pie-md-2 p-h-15 hover-color-1">
+							<div class="phones pie-md-3 p-h-15 hover-color-1">
 								<div class="header-phone">
 									<p><big><b>+998 (97) 777-44-44</b></big></p>
 									<p class="m-v-5"><small>Обратный звонок</small></p>
 								</div>
 							</div>
 
-							<div class="socicons pie-md-3 text-center color-2">
+							<div class="socicons pie-md-2 text-center color-2">
 								<ul class="list-inline">
 									<li><a href="" title=""><i class="ls-facebook"></i></a></li>
 									<li><a href="" title=""><i class="ls-instagram"></i></a></li>
@@ -153,29 +187,241 @@
 								</ul>
 							</div>
 
-							<div class="header-basket pie-md-4 text-center">
+							<div class="header-basket pie-md-6 text-center">
 								<div class="header-baskter-content">
 									<div class="img-content">
-										<img src="img/icons/basket.png" alt="">
-										<div class="basket-circle">7</div>
+										<a data-toggle="modal" data-target="#agreementModal" role="button" title="">
+											<img src="img/icons/basket.png" alt="">
+											<div class="basket-circle">7</div>
+										</a>
 									</div>
 									<div class="desc-content m-v-10">
 										<p><b>В корзине 7 товаров</b></p>
 									</div>
 								</div>
 							</div>
+
 						</div>
 					</div><!-- ./CONTAINER -->
-			</div><!-- ./HEADER TOP -->
+			</div><!-- ./HEADER MIDDLE -->
 			
 			<!-- HEADER BOTTOM -->
 			<div class="header-bottom-content bg-color-1 text-center color-white hidden-sm hidden-xs">
 				<div class="container">
 					<div class="row">
+
 						<div class="menu-bottom pie-md pie-dry p-h-15 text-uppercase">
 							<ul class="list-inline m-auto">
-								<li><a href="">Бренды</a></li>
-								<li><a href="">Макияж</a></li>
+
+								<li><a href="">Бренды</a>
+									<div class="submenu-box submenu-brands text-left">
+										<div class="submenu-box-wrapper">
+											<div class="button-group">
+												<ul class="list-inline sublist">
+													<li data-selector=".char-1" role="button" class="is-selected">A</li>
+													<li data-selector=".char-2" role="button">B</li>
+													<li data-selector=".char-3" role="button">C</li>
+													<li data-selector=".char-4" role="button">D</li>
+													<li data-selector=".char-5" role="button">E</li>
+													<li data-selector=".char-1" role="button">A</li>
+													<li data-selector=".char-2" role="button">B</li>
+													<li data-selector=".char-3" role="button">C</li>
+													<li data-selector=".char-4" role="button">D</li>
+													<li data-selector=".char-5" role="button">E</li>
+													<li data-selector=".char-6" role="button">F</li>
+													<li data-selector=".char-7" role="button">G</li>
+													<li data-selector=".char-8" role="button">H</li>
+													<li data-selector=".char-9" role="button">I</li>
+													<li data-selector=".char-10" role="button">J</li>
+													<li data-selector=".char-11" role="button">K</li>
+													<li data-selector=".char-12" role="button">L</li>
+													<li data-selector=".char-13" role="button">M</li>
+													<li data-selector=".char-14" role="button">N</li>
+													<li data-selector=".char-15" role="button">O</li>
+													<li data-selector=".char-16" role="button">P</li>
+													<li data-selector=".char-17" role="button">R</li>
+													<li data-selector=".char-18" role="button">S</li>
+													<li data-selector=".char-19" role="button">T</li>
+													<li data-selector=".char-20" role="button">U</li>
+													<li data-selector=".char-21" role="button">V</li>
+													<li data-selector=".char-22" role="button">W</li>
+													<li data-selector=".char-23" role="button">Y</li>
+													<li data-selector=".char-24" role="button">Z</li>
+													<li data-selector=".char-25" role="button">Б</li>
+												</ul>
+											</div>
+											<div class="brands-menu-carousel">
+												<div class="carousel-items">
+												  <div class="carousel-cell char-1">
+												  	<h1>A</h1>
+												  	<div class="brands-names">
+															<a href="" title="">A'pieu</a>
+															<a href="" title="">A-Derma</a>
+															<a href="" title="">Absolute New York</a>
+															<a href="" title="">Absolution</a>
+															<a href="" title="">Acqua Di Portofino</a>
+															<a href="" title="">Aedes de Venustas</a>
+															<a href="" title="">Aether</a>
+															<a href="" title="">Affinessence</a>
+															<a href="" title="">A'pieu</a>
+															<a href="" title="">A-Derma</a>
+															<a href="" title="">Absolute New York</a>
+															<a href="" title="">Absolution</a>
+															<a href="" title="">Acqua Di Portofino</a>
+															<a href="" title="">Aedes de Venustas</a>
+															<a href="" title="">Aether</a>
+															<a href="" title="">Affinessence</a>
+															<a href="" title="">A'pieu</a>
+															<a href="" title="">A-Derma</a>
+															<a href="" title="">Absolute New York</a>
+															<a href="" title="">Absolution</a>
+															<a href="" title="">Acqua Di Portofino</a>
+															<a href="" title="">Aedes de Venustas</a>
+															<a href="" title="">Aether</a>
+															<a href="" title="">Affinessence</a>
+												  	</div>
+												  </div>
+												  <div class="carousel-cell char-2">
+												  	<h1>B</h1>
+												  	<div class="brands-names">
+															<a href="" title="">B'pieu</a>
+															<a href="" title="">B-Derma</a>
+															<a href="" title="">Bbsolute New York</a>
+															<a href="" title="">Bbsolution</a>
+															<a href="" title="">Bcqua Di Portofino</a>
+															<a href="" title="">Bedes de Venustas</a>
+															<a href="" title="">Bether</a>
+															<a href="" title="">Bffinessence</a>
+															<a href="" title="">B'pieu</a>
+															<a href="" title="">B-Derma</a>
+															<a href="" title="">Bbsolute New York</a>
+															<a href="" title="">Bbsolution</a>
+															<a href="" title="">Bcqua Di Portofino</a>
+															<a href="" title="">Bedes de Venustas</a>
+															<a href="" title="">Bether</a>
+															<a href="" title="">Bffinessence</a>
+															<a href="" title="">B'pieu</a>
+															<a href="" title="">B-Derma</a>
+															<a href="" title="">Bbsolute New York</a>
+															<a href="" title="">Bbsolution</a>
+															<a href="" title="">Bcqua Di Portofino</a>
+															<a href="" title="">Bedes de Venustas</a>
+															<a href="" title="">Bether</a>
+															<a href="" title="">Bffinessence</a>
+												  	</div>
+												  </div>
+												  <div class="carousel-cell char-3">
+												  	<h1>C</h1>
+												  	<div class="brands-names">
+															<a href="" title="">C'pieu</a>
+															<a href="" title="">C-Derma</a>
+															<a href="" title="">Cbsolute New York</a>
+															<a href="" title="">Cbsolution</a>
+															<a href="" title="">Ccqua Di Portofino</a>
+															<a href="" title="">Cedes de Venustas</a>
+															<a href="" title="">Cether</a>
+															<a href="" title="">Cffinessence</a>
+															<a href="" title="">C'pieu</a>
+															<a href="" title="">C-Derma</a>
+															<a href="" title="">Cbsolute New York</a>
+															<a href="" title="">Cbsolution</a>
+															<a href="" title="">Ccqua Di Portofino</a>
+															<a href="" title="">Cedes de Venustas</a>
+															<a href="" title="">Cether</a>
+															<a href="" title="">Cffinessence</a>
+															<a href="" title="">C'pieu</a>
+															<a href="" title="">C-Derma</a>
+															<a href="" title="">Cbsolute New York</a>
+															<a href="" title="">Cbsolution</a>
+															<a href="" title="">Ccqua Di Portofino</a>
+															<a href="" title="">Cedes de Venustas</a>
+															<a href="" title="">Cether</a>
+															<a href="" title="">Cffinessence</a>
+												  	</div>
+												  </div>
+												  <div class="carousel-cell char-4">
+												  	<h1>D</h1>
+												  	<div class="brands-names">
+															<a href="" title="">D'pieu</a>
+															<a href="" title="">D-Derma</a>
+															<a href="" title="">Dbsolute New York</a>
+															<a href="" title="">Dbsolution</a>
+															<a href="" title="">Dcqua Di Portofino</a>
+															<a href="" title="">Dedes de Venustas</a>
+															<a href="" title="">Dether</a>
+															<a href="" title="">Dffinessence</a>
+															<a href="" title="">D'pieu</a>
+															<a href="" title="">D-Derma</a>
+															<a href="" title="">Dbsolute New York</a>
+															<a href="" title="">Dbsolution</a>
+															<a href="" title="">Dcqua Di Portofino</a>
+															<a href="" title="">Dedes de Venustas</a>
+															<a href="" title="">Dether</a>
+															<a href="" title="">Dffinessence</a>
+															<a href="" title="">D'pieu</a>
+															<a href="" title="">D-Derma</a>
+															<a href="" title="">Dbsolute New York</a>
+															<a href="" title="">Dbsolution</a>
+															<a href="" title="">Dcqua Di Portofino</a>
+															<a href="" title="">Dedes de Venustas</a>
+															<a href="" title="">Dether</a>
+															<a href="" title="">Dffinessence</a>
+												  	</div>
+												  </div>
+												  <div class="carousel-cell char-5">
+												  	<h1>E</h1>
+												  	<div class="brands-names">
+															<a href="" title="">E'pieu</a>
+															<a href="" title="">E-Derma</a>
+															<a href="" title="">Ebsolute New York</a>
+															<a href="" title="">Ebsolution</a>
+															<a href="" title="">Ecqua Di Portofino</a>
+															<a href="" title="">Eedes de Venustas</a>
+															<a href="" title="">Eether</a>
+															<a href="" title="">Effinessence</a>
+															<a href="" title="">E'pieu</a>
+															<a href="" title="">E-Derma</a>
+															<a href="" title="">Ebsolute New York</a>
+															<a href="" title="">Ebsolution</a>
+															<a href="" title="">Ecqua Di Portofino</a>
+															<a href="" title="">Eedes de Venustas</a>
+															<a href="" title="">Eether</a>
+															<a href="" title="">Effinessence</a>
+															<a href="" title="">E'pieu</a>
+															<a href="" title="">E-Derma</a>
+															<a href="" title="">Ebsolute New York</a>
+															<a href="" title="">Ebsolution</a>
+															<a href="" title="">Ecqua Di Portofino</a>
+															<a href="" title="">Eedes de Venustas</a>
+															<a href="" title="">Eether</a>
+															<a href="" title="">Effinessence</a>
+												  	</div>
+												  </div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li><a href="">Макияж</a>
+									<div class="submenu-box submenu-maquillage text-left">
+										<div class="submenu-box-wrapper pie-cells-4">
+
+											<div class="pie-cell">
+												<h3>Палетки</h3>
+												<ul class="sublist">
+													<li><a href="" title="">Для глаз</a></li>
+													<li><a href="" title="">Для губ</a></li>
+													<li><a href="" title="">Для лица</a></li>
+													<li><a href="" title="">Для бровей</a></li>
+													<li><a href="" title="">Многофункциональные</a></li>
+												</ul>
+											</div>
+
+										</div>
+									</div>
+								</li>
+
 								<li><a href="">Лицо</a></li>
 								<li><a href="">Тело</a></li>
 								<li><a href="">Волосы</a></li>
@@ -184,9 +430,11 @@
 								<li><a href="">Распродажа</a></li>
 							</ul>
 						</div>
+
+
 					</div>
 				</div><!-- ./CONTAINER -->
-			</div><!-- ./HEADER TOP -->
+			</div><!-- ./HEADER BOTTOM -->
 			
 
 		</header>
@@ -240,7 +488,7 @@
 			<div class="main-slider">
 				<div class="fullscreen-container">
 
-					<div class="rev-slider bg-color-white banner-slider">
+					<div class="rev-slider bg-color-white">
 						<ul>
 							<li data-transition="zoomout" data-masterspeed="1200">
 								<img src="img/slider/slide-1.jpg">
@@ -256,35 +504,6 @@
 									<div class="tp-caption slide-header customin customout start" data-x="center" data-y="center" data-customin="opacity:0;" data-customout="opacity:0;" data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1200" data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn" data-captionhidden="on"></div>
 								</div>
 							</li>
-							<li data-transition="zoomout" data-masterspeed="1200">
-								<img src="img/slider/slide-1.jpg">
-								<div class="wrapper-bg tp-caption customin customout start hidden" data-x="center" data-y="center" data-customin="opacity:0;" data-customout="opacity:0;" data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1000" data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn" data-captionhidden="on"></div>
-								<div class="container">
-									<div class="tp-caption slide-header customin customout start" data-x="center" data-y="center" data-customin="opacity:0;" data-customout="opacity:0;" data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1200" data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn" data-captionhidden="on"></div>
-								</div>
-							</li>
-							<li data-transition="zoomout" data-masterspeed="1200">
-								<img src="img/slider/slide-1.jpg">
-								<div class="wrapper-bg tp-caption customin customout start hidden" data-x="center" data-y="center" data-customin="opacity:0;" data-customout="opacity:0;" data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1000" data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn" data-captionhidden="on"></div>
-								<div class="container">
-									<div class="tp-caption slide-header customin customout start" data-x="center" data-y="center" data-customin="opacity:0;" data-customout="opacity:0;" data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1200" data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn" data-captionhidden="on"></div>
-								</div>
-							</li>
-							<li data-transition="zoomout" data-masterspeed="1200">
-								<img src="img/slider/slide-1.jpg">
-								<div class="wrapper-bg tp-caption customin customout start hidden" data-x="center" data-y="center" data-customin="opacity:0;" data-customout="opacity:0;" data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1000" data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn" data-captionhidden="on"></div>
-								<div class="container">
-									<div class="tp-caption slide-header customin customout start" data-x="center" data-y="center" data-customin="opacity:0;" data-customout="opacity:0;" data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1200" data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn" data-captionhidden="on"></div>
-								</div>
-							</li>
-							<li data-transition="zoomout" data-masterspeed="1200">
-								<img src="img/slider/slide-1.jpg">
-								<div class="wrapper-bg tp-caption customin customout start hidden" data-x="center" data-y="center" data-customin="opacity:0;" data-customout="opacity:0;" data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1000" data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn" data-captionhidden="on"></div>
-								<div class="container">
-									<div class="tp-caption slide-header customin customout start" data-x="center" data-y="center" data-customin="opacity:0;" data-customout="opacity:0;" data-speed="1800" data-hoffset="0" data-voffset="0" data-start="1200" data-easing="Power4.easeOut" data-endspeed="1000" data-endeasing="Power4.easeIn" data-captionhidden="on"></div>
-								</div>
-							</li>
-
 						</ul>
 					</div>
 					<div class="arrow-container container"></div>
