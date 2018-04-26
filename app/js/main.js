@@ -116,27 +116,27 @@
         percentPosition: true,
         cellAlign: 'center'
       });
-    $("[hover-target]").hover(function(e){
-      var that = $(this);
-      var targetCLass = that.attr("hover-target");
-      $(targetCLass).addClass("hovered");
-      window.brandMenuHovered = true;
-    }, function(){
-        window.that = $(this);
-        function closeHover(){
-          var targetCLass = $(that).attr("hover-target");
-          $(targetCLass).removeClass("hovered");
-        }
-    })
-    setTimeout(function(){(function( that ){
-      $(".submenu-brands").hover(function(){
+    // $("[hover-target]").hover(function(e){
+    //   var that = $(this);
+    //   var targetCLass = that.attr("hover-target");
+    //   $(targetCLass).addClass("hovered");
+    //   window.brandMenuHovered = true;
+    // }, function(){
+    //     window.that = $(this);
+    //     function closeHover(){
+    //       var targetCLass = $(that).attr("hover-target");
+    //       $(targetCLass).removeClass("hovered");
+    //     }
+    // })
+    // setTimeout(function(){(function( that ){
+    //   $(".submenu-brands").hover(function(){
         
-      }, function(){
+    //   }, function(){
         
-      })
+    //   })
       
       
-    })(that)}, 300)
+    // })(that)}, 300)
 
     $('.button-group').on( 'click', 'li', function() {
       var that = $(this);
@@ -164,6 +164,23 @@
         percentPosition: true,
         cellAlign: 'center'
       });
+
+      $('.producitons-carousel .carousel-items').flickity({
+        imagesLoaded: true,
+        autoPlay: false,
+        pauseAutoPlayOnHover: true,
+        arrowShape: arrowStyle,
+        initialIndex: 1,
+        prevNextButtons: false,
+        draggable: true,
+        wrapAround: false, 
+        pageDots: false,
+        contain: false,
+        percentPosition: true,
+        cellAlign: 'center'
+      });
+      flickityPrevNext( ".producitons-carousel" );
+
 
     // FANCYBOX
     if ($("[data-fancybox='gallery']").length != 0)
