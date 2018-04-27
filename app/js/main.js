@@ -65,31 +65,35 @@
 
     // Flikity Carousel
     function flickityPrevNext(className) {
-      var carouselWrapper = $(className);
-      var carousel = carouselWrapper.find(".carousel-items");
-      var carouselPrevNext = carouselWrapper.find(".carousel-prev-next");
-      var btnNext = carouselPrevNext.find(".next");
-      var btnPrev = carouselPrevNext.find(".prev");
-      var flkty = carousel.data("flickity");
-      var selected;
-      btnNext.on("click", function() {
-        carousel.flickity("next", true);
-      });
 
-      btnPrev.on("click", function() {
-        carousel.flickity("previous", true);
-      });
-      carousel.on("select.flickity", function() {
-        selected = $(flkty.selectedElement);
-        //console.log( $(selected).addBack() )
-        selected
-          .siblings()
-          .addBack()
-          .removeClass("is-next is-prev");
-        selected.next().addClass("is-next");
-        selected.prev().addClass("is-prev");
-        //console.log( $(flkty.selectedElement).next() )
-      });
+      var carouselWrapper = $(className);
+
+      for (var i = 0; i < carouselWrapper.length; i++) {
+        var crs = $(carouselWrapper[i]); 
+        var carousel = crs.find(".carousel-items");
+        var carouselPrevNext = crs.find(".carousel-prev-next");
+        var btnNext = carouselPrevNext.find(".next");
+        var btnPrev = carouselPrevNext.find(".prev");
+        var flkty = carousel.data("flickity");
+        var selected;
+        console.log( carousel )
+        btnNext.on("click", function() {
+          carousel.flickity("next", true);
+        });
+
+        btnPrev.on("click", function() {
+          carousel.flickity("previous", true);
+        });
+        carousel.on("select.flickity", function() {
+          selected = $(flkty.selectedElement);
+          selected
+            .siblings()
+            .addBack()
+            .removeClass("is-next is-prev");
+          selected.next().addClass("is-next");
+          selected.prev().addClass("is-prev");
+        });
+      }
     }
 
     var arrowStyle = {
@@ -116,27 +120,6 @@
         percentPosition: true,
         cellAlign: 'center'
       });
-    // $("[hover-target]").hover(function(e){
-    //   var that = $(this);
-    //   var targetCLass = that.attr("hover-target");
-    //   $(targetCLass).addClass("hovered");
-    //   window.brandMenuHovered = true;
-    // }, function(){
-    //     window.that = $(this);
-    //     function closeHover(){
-    //       var targetCLass = $(that).attr("hover-target");
-    //       $(targetCLass).removeClass("hovered");
-    //     }
-    // })
-    // setTimeout(function(){(function( that ){
-    //   $(".submenu-brands").hover(function(){
-        
-    //   }, function(){
-        
-    //   })
-      
-      
-    // })(that)}, 300)
 
     $('.button-group').on( 'click', 'li', function() {
       var that = $(this);
@@ -164,22 +147,37 @@
         percentPosition: true,
         cellAlign: 'center'
       });
-
-      $('.producitons-carousel .carousel-items').flickity({
+    //producitons-carousel
+    $('.productions-carousel .carousel-items').map(function(i, el){
+      var fct = $(el).flickity({
         imagesLoaded: true,
         autoPlay: false,
         pauseAutoPlayOnHover: true,
+        lazyLoad: true,
         arrowShape: arrowStyle,
+        setGallerySize: true,
         initialIndex: 1,
-        prevNextButtons: false,
-        draggable: true,
-        wrapAround: false, 
+        prevNextButtons: true,
+        draggable: false,
+        resize: false,
+        wrapAround: true, 
         pageDots: false,
         contain: false,
         percentPosition: true,
         cellAlign: 'center'
+      })
+      //TODO
+      var fctData = fct.data("flickity");
+      $(fct).on( 'ready.flickity', function() {
+        console.log('Flickity ready');
       });
-      flickityPrevNext( ".producitons-carousel" );
+      $(document).on("click", "[flickity='resize']",function(){
+        setTimeout(function(){ 
+          fct.flickity('resize');
+        },200)
+      })
+    })
+    //flickityPrevNext( ".productions-carousel" );
 
 
     // FANCYBOX
@@ -214,22 +212,7 @@
         }
       );
 
-    var carouselJournal = $(".short-journal-carousel .carousel-items").flickity(
-      {
-        imagesLoaded: true,
-        autoPlay: false,
-        pauseAutoPlayOnHover: true,
-        arrowShape: arrowStyle,
-        initialIndex: 1,
-        prevNextButtons: true,
-        draggable: false,
-        wrapAround: true,
-        pageDots: !true,
-        contain: false,
-        percentPosition: true,
-        cellAlign: "center"
-      }
-    );
+
 
     window.carouselArticle = function() {
       if ($(".carousel-article").length >= 0) {
@@ -280,6 +263,7 @@
           percentPosition: true
         });
       }
+
     }
     var index = $(".rev-slider:not(.banner-slider)").length || null;
     if (!index) $(".header-scroll").addClass("header-pages");

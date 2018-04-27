@@ -11,8 +11,8 @@ $color-3: #2983f6 !default;
 $color-4: darken($color-3, 35%) !default;
 $color-5: #008CC7 !default;
 
-$font-family-1: "Arial";
-$font-family-2: "Open Sans";
+$font-family-1: "Open Sans";
+$font-family-2: "1Isadora_M_Bold";
 $font-family-3: "Days";
 
 $color-scroll: $color-1;
@@ -397,7 +397,7 @@ ol{
 input:focus, button:focus{
 	outline: transparent;
 }
-b{font-weight: 600;}
+b{font-weight: 700;}
 strong{font-weight: 700;}
 textarea{
 	&:focus{
