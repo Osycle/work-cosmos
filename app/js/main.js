@@ -265,17 +265,17 @@
       }
 
     }
-    var index = $(".rev-slider:not(.banner-slider)").length || null;
-    if (!index) $(".header-scroll").addClass("header-pages");
+    //var index = $(".rev-slider:not(.banner-slider)").length || null;
+    //if (!index) $(".header-scroll").addClass("header-pages");
 
     //SCROLL
     var minMenu = $(".header-scroll") || null;
     var headerRange = false;
     $(window).on("scroll", function(e) {
-      if ($(window).scrollTop() > 80 && headerRange == false) {
+      if ($(window).scrollTop() > 150 && headerRange == false) {
         headerRange = true;
         if (minMenu) minMenu.addClass("scrolled").addClass("down");
-      } else if ($(window).scrollTop() < 80 && headerRange == true) {
+      } else if ($(window).scrollTop() < 150 && headerRange == true) {
         headerRange = !true;
         if (minMenu) minMenu.removeClass("scrolled");
       } //.originalEvent.wheelDelta

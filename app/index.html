@@ -24,37 +24,30 @@
 				<br/> Пожалуйста подключите в настройках браузера Javascript</p>
 		</noscript>
 
-		<div class="form-modal modal fade animated" id="formModal" tabindex="-1" role="dialog">
+		<!-- entry-modal -->
+		<div class="entry-modal modal fade animated" id="formEntry" tabindex="-1" role="dialog">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<button type="button" class="btn" data-dismiss="modal"><span class="icon-bar"></span><span class="icon-bar"></span></button>
 	
 					<div class="modal-body">
 	
-						 <!-- success-info -->
-						<div class="col-md-12 success-info m-b-30 text-center">
-							<font color="red"><div class="info-suc" id=""></div></font>
-							<font color="green"><div class="info-err" id=""></div></font>
-						</div>
-	
 						<form method="POST" action="">
 						
-							<h3>Связаться с нами</h3>
-	
-							<!-- NAME -->
-							<label for="input-1">
-								<span data-content="Имя, фамилия">Имя, фамилия</span>
-							</label>
-							<input type="text" class="form-control" name="name">
-	
-							<!-- TEL -->
-							<label for="input-3">
-								<span data-content="Номер телефона">Номер телефона</span>
-							</label>
-							<input type="text" class="form-control" name="tel">
+							<h3>Войти</h3>
+							<div class="col-md-12">
+								<label>Логин<input class="form-control" type="text" name="" value=""></label>
+							</div>
+							<div class="col-md-12">
+								<label>Пароль<input class="form-control" type="text" name="" value=""></label>
+							</div>
+							<div class="col-md-12 m-v-5">
+								<p><b><a href="reg.html" title="" underline>Регистрация</a></b></p>
+							</div>
+
 							<br>
 							<div class="form-footer">
-								<button type="submit" class="text-right btn-def color-white submit"><b>Отправить</b></button>
+								<button type="submit" class="text-right btn-def color-white btn-res"><b>Вход</b></button>
 							</div>
 	
 						</form>
@@ -124,7 +117,7 @@
 									</div>
 								</a>
 								<div class="panel-face p-h-15">
-									<a href="" role="button">		
+									<a data-toggle="modal" data-target="#formEntry" role="button" title="">
 										<span class="icon-content vam"><i class="ls-avatar"></i></span>
 										<span class="text-content vam"><p>Мой кабинет</p></span>
 									</div>
@@ -539,7 +532,7 @@
 		<div class="min-menu-header hidden-md hidden-lg">
 			<div class="wrapper-bg"></div>
 			<div class="col-xs-6">
-				<div class="min-menu-logo">
+				<div class="min-menu-logo filter-white">
 					<a href="index.html"><img src="img/logo.png"/></a>
 				</div>
 			</div>
@@ -587,7 +580,7 @@
 				<div class="short-advantages">
 					<div class="container m-v-5">
 						<div class="row">
-							<div class="short-advantages-items boxes-3 figure-m-v-5">
+							<div class="short-advantages-items text-left-sm boxes-3 figure-m-v-5">
 								<figure>
 									<div class="img-content pie-xs-4 p-h-15">
 										<img src="img/icons/truck.svg" alt="" width="85">
@@ -1169,7 +1162,7 @@
 
 					</div>
 				</div>
-
+				<!-- short-feedback -->
 				<div class="short-feedback bg-texture-1">
 					<div class="container">
 						<div class="row">
@@ -1204,84 +1197,106 @@
 							</div>
 						</div>
 					</div>
-				</div>
-
-			</div><!-- ./MAIN-CONTENT -->
-		</main><!-- ./MAIN -->
-
-
-		<!-- FOOTER -->
-		<footer id="footer" class="container-fluid text-center-sm bg-color-black">
-			<div class="container">
-				<div class="footer-content clearfix color-white">
-
-				<!-- short-partners -->
-				<div class="row short-partners">
-					<div class="container m-v-30">
-						<div class="short-partners-carousel flickity-btn-1 clearfix m-v-10">
-							<div class="carousel-items pie-cells-5">
-								<figure>
-									<a href="partners.html">
-										<div class="img-content">
-											<img src="img/partners/1.png" alt="">
-										</div>
-									</a>
-								</figure>
-								<figure>
-									<a href="partners.html">
-										<div class="img-content">
-											<img src="img/partners/2.png" alt="">
-										</div>
-									</a>
-								</figure>
-								<figure>
-									<a href="partners.html">
-										<div class="img-content">
-											<img src="img/partners/3.png" alt="">
-										</div>
-									</a>
-								</figure>
-								<figure>
-									<a href="partners.html">
-										<div class="img-content">
-											<img src="img/partners/4.png" alt="">
-										</div>
-									</a>
-								</figure>
-								<figure>
-									<a href="partners.html">
-										<div class="img-content">
-											<img src="img/partners/5.png" alt="">
-										</div>
-									</a>
-								</figure>
-								<figure>
-									<a href="partners.html">
-										<div class="img-content">
-											<img src="img/partners/5.png" alt="">
-										</div>
-									</a>
-								</figure>
-								
-							</div>
-							<div class="carousel-prev-next hide">
-								<span class="next"> <i class="fa fa-angle-right"></i></span>
-								<span class="prev"> <i class="fa fa-angle-left"></i></span>
+					<!-- subscribe -->
+					<div class="subscribe p-b-60">
+						<div class="bg-wrapper">
+							<div class="container">
+								<div class="subscribe-content">
+									<div class="desc-content pie-md-6 p-h-15 m-v-60">
+										<h2 class="color-1">Подпишитесь на рассылку новостей</h2>
+										<p>Будьте первым, кто узнает. Подпишитесь на рассылку новотей сегодня</p>
+									</div>
+									<div class="form-content pie-md-6 p-h-15 m-v-60">
+										<form method="POST" action="">
+											<div class="search-input">
+												<input class="tp-form-control color-black" name="query" value="" placeholder="Введите адрес электронной почты здесь">
+												<button type="submit" class="btn-res btn-search text-uppercase">Подписаться</button>
+											</div>
+										</form>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 
 
-					<div class="row">
-						<!-- DEV -->
-						<div class="col-md-12 p-h-15 ">
+			</div><!-- ./MAIN-CONTENT -->
+		</main><!-- ./MAIN -->
+
+
+		<!-- FOOTER -->
+		<footer id="footer" class="container-fluid text-center-sm bg-color-2">
+			<div class="container">
+				<div class="footer-content clearfix color-white">
+
+					<div class="footer-logo col-md-3 m-v-30">
+						<div class="img-content filter-white">
+							<a href="index.html" title="">
+								<img src="img/logo.png" alt="">
+							</a>
+						</div>
+					</div>
+
+					<div class="footer-menu col-md-9 m-v-25 hover-color-1 hover-underline">
+						<div class="col-md-4">
+							<h4>Информация</h4>
+							<ul>
+								<li><a href="" title="">О нас</a></li>
+								<li><a href="" title="">Информация о доставке</a></li>
+								<li><a href="" title="">Политика конфиденциальности</a></li>
+								<li><a href="" title="">Условия и положения</a></li>
+							</ul>
+						</div>
+						<div class="col-md-4">
+							<h4>Мой аккаунт</h4>
+							<ul>
+								<li><a href="" title="">Мой аккаунт</a></li>
+								<li><a href="" title="">История заказов</a></li>
+								<li><a href="" title="">Список пожеланий</a></li>
+								<li><a href="" title="">Новостная рассылка</a></li>
+							</ul>
+						</div>
+						<div class="col-md-4">
+							<h4>Дополнительно</h4>
+							<ul>
+								<li><a href="" title="">Бренды</a></li>
+								<li><a href="" title="">Подарочные сертификаты</a></li>
+								<li><a href="" title="">Партнеры</a></li>
+								<li><a href="" title="">Специальные предложения</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="footer-feedback m-v-30 col-md-12">
+						<div class="col-md-3 footer-feedback-info">
+							<p><b>Контактная информация: </b></p>
+							<p>г. Ташкент улица Дагбитская 24/5</p>
+						</div>
+						<div class="footer-socicons col-md-6 m-v-10 text-center hover-color-1">
+							<ul class="list-inline">
+								<li><a href="" title=""><i class="ls-facebook"></i></a></li>
+								<li><a href="" title=""><i class="ls-instagram"></i></a></li>
+								<li><a href="" title=""><i class="ls-telegram"></i></a></li>
+							</ul>
+						</div>
+						<div class="payicons col-md-3 filter-white">
+							<ul class="list-inline">
+								<li><a href="" title=""><img src="img/other/logo-click.png" alt=""></a></li>
+								<li><a href="" title=""><img src="img/other/logo-payme.png" alt=""></a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- DEV -->
+					<div class="row m-v-15">
+						<div class="col-md-12 p-h-15">
 							<div class="row">
 								<div class="dev hidden-xs hidden-sm float-right-md text-right-md col-md-4 m-v-15 p-h-15">
-									<a href="https://life-style.uz/" class="link" title="Создание и продвижение сайтов">Создание сайтов <em><span class="color-1">Life </span></em>Style</a>
+									<a href="https://lifestyle.uz/" class="link" title="Создание и продвижение сайтов">Создание сайтов <em><span class="color-1">Life </span></em>Style</a>
 								</div>
 								<div class="copyright col-md-4 m-v-15 p-h-15">
-									<p>Copyright © <span class="color-1">L</span>TT <time id="copydate"></time>. Все права защищены</p>
+									<p>Copyright © <span class="color-1">Cosmos</span> <time id="copydate"></time>. Все права защищены</p>
 									<script>copydate.innerText = new Date().getFullYear()</script>
 								</div>
 							</div>
