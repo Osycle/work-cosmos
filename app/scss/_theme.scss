@@ -18,8 +18,8 @@ $font-family-3: "Days";
 $color-scroll: $color-1;
 $color-footer: #0071BC;
 
-$color-gray_1: #F4F4F4;
-$color-gray_2: #FAFAFA;
+$color-gray_1: #eee;
+$color-gray_2: #bdbdbd;
 $color-gray_3: #212121;
 
 $bg-color-black: #555555;
@@ -414,14 +414,17 @@ label{
 
 .color-white{color: white;}
 .color-black{color: #15181e;}
-.color-gray{color: #727272;}
+
+.color-gray-1{color: $color-gray-1;}
+.color-gray-2{color: $color-gray-2;}
+.color-gray-3{color: $color-gray-3;}
 
 .color-1{color: $color-1;}
 .color-2{color: $color-2;}
 .color-3{color: $color-3;}
 .color-4{color: $color-4;}
 
-[class*="hover-color"] a{transition: all 0.3s ease-in-out;}
+[class*="hover-color"] a, [class*="hover-underline"] a{transition: all 0.3s ease-in-out;}
 
 .hover-color-1 a:hover{color: $color-1;}
 .hover-color-2 a:hover{color: $color-2;}

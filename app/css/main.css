@@ -493,7 +493,7 @@ template {
  */
 /* FONT PATH
  * -------------------------- */
-.fa {
+.fa, .short-reviews-carousel:before, .short-reviews-carousel:after {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -559,10 +559,10 @@ template {
 .fa-pull-right {
   float: right; }
 
-.fa.fa-pull-left {
+.fa.fa-pull-left, .fa-pull-left.short-reviews-carousel:before, .fa-pull-left.short-reviews-carousel:after {
   margin-right: .3em; }
 
-.fa.fa-pull-right {
+.fa.fa-pull-right, .fa-pull-right.short-reviews-carousel:before, .fa-pull-right.short-reviews-carousel:after {
   margin-left: .3em; }
 
 /* Deprecated as of 4.4.0 */
@@ -572,10 +572,10 @@ template {
 .pull-left {
   float: left; }
 
-.fa.pull-left {
+.fa.pull-left, .pull-left.short-reviews-carousel:before, .pull-left.short-reviews-carousel:after {
   margin-right: .3em; }
 
-.fa.pull-right {
+.fa.pull-right, .pull-right.short-reviews-carousel:before, .pull-right.short-reviews-carousel:after {
   margin-left: .3em; }
 
 .fa-spin {
@@ -1419,7 +1419,7 @@ template {
 .fa-circle-o:before {
   content: "\f10c"; }
 
-.fa-quote-left:before {
+.fa-quote-left:before, .short-reviews-carousel:before {
   content: "\f10d"; }
 
 .fa-quote-right:before {
@@ -2875,7 +2875,8 @@ template {
   .table, table {
     border-collapse: collapse !important; }
     .table td, table td,
-    .table th, table th {
+    .table th,
+    table th {
       background-color: #fff !important; }
   .table-bordered th,
   .table-bordered td {
@@ -2964,7 +2965,8 @@ hr {
   clip: rect(0, 0, 0, 0);
   border: 0; }
 
-.sr-only-focusable:active, .sr-only-focusable:focus {
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
   position: static;
   width: auto;
   height: auto;
@@ -3881,11 +3883,16 @@ th {
   max-width: 100%;
   margin-bottom: 20px; }
   .table > thead > tr > th, table > thead > tr > th,
-  .table > thead > tr > td, table > thead > tr > td,
-  .table > tbody > tr > th, table > tbody > tr > th,
-  .table > tbody > tr > td, table > tbody > tr > td,
-  .table > tfoot > tr > th, table > tfoot > tr > th,
-  .table > tfoot > tr > td, table > tfoot > tr > td {
+  .table > thead > tr > td,
+  table > thead > tr > td,
+  .table > tbody > tr > th,
+  table > tbody > tr > th,
+  .table > tbody > tr > td,
+  table > tbody > tr > td,
+  .table > tfoot > tr > th,
+  table > tfoot > tr > th,
+  .table > tfoot > tr > td,
+  table > tfoot > tr > td {
     padding: 8px;
     line-height: 1.42857;
     vertical-align: top;
@@ -3894,11 +3901,16 @@ th {
     vertical-align: bottom;
     border-bottom: 2px solid #ddd; }
   .table > caption + thead > tr:first-child > th, table > caption + thead > tr:first-child > th,
-  .table > caption + thead > tr:first-child > td, table > caption + thead > tr:first-child > td,
-  .table > colgroup + thead > tr:first-child > th, table > colgroup + thead > tr:first-child > th,
-  .table > colgroup + thead > tr:first-child > td, table > colgroup + thead > tr:first-child > td,
-  .table > thead:first-child > tr:first-child > th, table > thead:first-child > tr:first-child > th,
-  .table > thead:first-child > tr:first-child > td, table > thead:first-child > tr:first-child > td {
+  .table > caption + thead > tr:first-child > td,
+  table > caption + thead > tr:first-child > td,
+  .table > colgroup + thead > tr:first-child > th,
+  table > colgroup + thead > tr:first-child > th,
+  .table > colgroup + thead > tr:first-child > td,
+  table > colgroup + thead > tr:first-child > td,
+  .table > thead:first-child > tr:first-child > th,
+  table > thead:first-child > tr:first-child > th,
+  .table > thead:first-child > tr:first-child > td,
+  table > thead:first-child > tr:first-child > td {
     border-top: 0; }
   .table > tbody + tbody, table > tbody + tbody {
     border-top: 2px solid #ddd; }
@@ -3944,17 +3956,28 @@ table th[class*="col-"] {
   display: table-cell; }
 
 .table > thead > tr > td.active, table > thead > tr > td.active,
-.table > thead > tr > th.active, table > thead > tr > th.active,
-.table > thead > tr.active > td, table > thead > tr.active > td,
-.table > thead > tr.active > th, table > thead > tr.active > th,
-.table > tbody > tr > td.active, table > tbody > tr > td.active,
-.table > tbody > tr > th.active, table > tbody > tr > th.active,
-.table > tbody > tr.active > td, table > tbody > tr.active > td,
-.table > tbody > tr.active > th, table > tbody > tr.active > th,
-.table > tfoot > tr > td.active, table > tfoot > tr > td.active,
-.table > tfoot > tr > th.active, table > tfoot > tr > th.active,
-.table > tfoot > tr.active > td, table > tfoot > tr.active > td,
-.table > tfoot > tr.active > th, table > tfoot > tr.active > th {
+.table > thead > tr > th.active,
+table > thead > tr > th.active,
+.table > thead > tr.active > td,
+table > thead > tr.active > td,
+.table > thead > tr.active > th,
+table > thead > tr.active > th,
+.table > tbody > tr > td.active,
+table > tbody > tr > td.active,
+.table > tbody > tr > th.active,
+table > tbody > tr > th.active,
+.table > tbody > tr.active > td,
+table > tbody > tr.active > td,
+.table > tbody > tr.active > th,
+table > tbody > tr.active > th,
+.table > tfoot > tr > td.active,
+table > tfoot > tr > td.active,
+.table > tfoot > tr > th.active,
+table > tfoot > tr > th.active,
+.table > tfoot > tr.active > td,
+table > tfoot > tr.active > td,
+.table > tfoot > tr.active > th,
+table > tfoot > tr.active > th {
   background-color: #f5f5f5; }
 
 .table-hover > tbody > tr > td.active:hover,
@@ -3965,17 +3988,28 @@ table th[class*="col-"] {
   background-color: #e8e8e8; }
 
 .table > thead > tr > td.success, table > thead > tr > td.success,
-.table > thead > tr > th.success, table > thead > tr > th.success,
-.table > thead > tr.success > td, table > thead > tr.success > td,
-.table > thead > tr.success > th, table > thead > tr.success > th,
-.table > tbody > tr > td.success, table > tbody > tr > td.success,
-.table > tbody > tr > th.success, table > tbody > tr > th.success,
-.table > tbody > tr.success > td, table > tbody > tr.success > td,
-.table > tbody > tr.success > th, table > tbody > tr.success > th,
-.table > tfoot > tr > td.success, table > tfoot > tr > td.success,
-.table > tfoot > tr > th.success, table > tfoot > tr > th.success,
-.table > tfoot > tr.success > td, table > tfoot > tr.success > td,
-.table > tfoot > tr.success > th, table > tfoot > tr.success > th {
+.table > thead > tr > th.success,
+table > thead > tr > th.success,
+.table > thead > tr.success > td,
+table > thead > tr.success > td,
+.table > thead > tr.success > th,
+table > thead > tr.success > th,
+.table > tbody > tr > td.success,
+table > tbody > tr > td.success,
+.table > tbody > tr > th.success,
+table > tbody > tr > th.success,
+.table > tbody > tr.success > td,
+table > tbody > tr.success > td,
+.table > tbody > tr.success > th,
+table > tbody > tr.success > th,
+.table > tfoot > tr > td.success,
+table > tfoot > tr > td.success,
+.table > tfoot > tr > th.success,
+table > tfoot > tr > th.success,
+.table > tfoot > tr.success > td,
+table > tfoot > tr.success > td,
+.table > tfoot > tr.success > th,
+table > tfoot > tr.success > th {
   background-color: #dff0d8; }
 
 .table-hover > tbody > tr > td.success:hover,
@@ -3986,17 +4020,28 @@ table th[class*="col-"] {
   background-color: #d0e9c6; }
 
 .table > thead > tr > td.info, table > thead > tr > td.info,
-.table > thead > tr > th.info, table > thead > tr > th.info,
-.table > thead > tr.info > td, table > thead > tr.info > td,
-.table > thead > tr.info > th, table > thead > tr.info > th,
-.table > tbody > tr > td.info, table > tbody > tr > td.info,
-.table > tbody > tr > th.info, table > tbody > tr > th.info,
-.table > tbody > tr.info > td, table > tbody > tr.info > td,
-.table > tbody > tr.info > th, table > tbody > tr.info > th,
-.table > tfoot > tr > td.info, table > tfoot > tr > td.info,
-.table > tfoot > tr > th.info, table > tfoot > tr > th.info,
-.table > tfoot > tr.info > td, table > tfoot > tr.info > td,
-.table > tfoot > tr.info > th, table > tfoot > tr.info > th {
+.table > thead > tr > th.info,
+table > thead > tr > th.info,
+.table > thead > tr.info > td,
+table > thead > tr.info > td,
+.table > thead > tr.info > th,
+table > thead > tr.info > th,
+.table > tbody > tr > td.info,
+table > tbody > tr > td.info,
+.table > tbody > tr > th.info,
+table > tbody > tr > th.info,
+.table > tbody > tr.info > td,
+table > tbody > tr.info > td,
+.table > tbody > tr.info > th,
+table > tbody > tr.info > th,
+.table > tfoot > tr > td.info,
+table > tfoot > tr > td.info,
+.table > tfoot > tr > th.info,
+table > tfoot > tr > th.info,
+.table > tfoot > tr.info > td,
+table > tfoot > tr.info > td,
+.table > tfoot > tr.info > th,
+table > tfoot > tr.info > th {
   background-color: #d9edf7; }
 
 .table-hover > tbody > tr > td.info:hover,
@@ -4007,17 +4052,28 @@ table th[class*="col-"] {
   background-color: #c4e3f3; }
 
 .table > thead > tr > td.warning, table > thead > tr > td.warning,
-.table > thead > tr > th.warning, table > thead > tr > th.warning,
-.table > thead > tr.warning > td, table > thead > tr.warning > td,
-.table > thead > tr.warning > th, table > thead > tr.warning > th,
-.table > tbody > tr > td.warning, table > tbody > tr > td.warning,
-.table > tbody > tr > th.warning, table > tbody > tr > th.warning,
-.table > tbody > tr.warning > td, table > tbody > tr.warning > td,
-.table > tbody > tr.warning > th, table > tbody > tr.warning > th,
-.table > tfoot > tr > td.warning, table > tfoot > tr > td.warning,
-.table > tfoot > tr > th.warning, table > tfoot > tr > th.warning,
-.table > tfoot > tr.warning > td, table > tfoot > tr.warning > td,
-.table > tfoot > tr.warning > th, table > tfoot > tr.warning > th {
+.table > thead > tr > th.warning,
+table > thead > tr > th.warning,
+.table > thead > tr.warning > td,
+table > thead > tr.warning > td,
+.table > thead > tr.warning > th,
+table > thead > tr.warning > th,
+.table > tbody > tr > td.warning,
+table > tbody > tr > td.warning,
+.table > tbody > tr > th.warning,
+table > tbody > tr > th.warning,
+.table > tbody > tr.warning > td,
+table > tbody > tr.warning > td,
+.table > tbody > tr.warning > th,
+table > tbody > tr.warning > th,
+.table > tfoot > tr > td.warning,
+table > tfoot > tr > td.warning,
+.table > tfoot > tr > th.warning,
+table > tfoot > tr > th.warning,
+.table > tfoot > tr.warning > td,
+table > tfoot > tr.warning > td,
+.table > tfoot > tr.warning > th,
+table > tfoot > tr.warning > th {
   background-color: #fcf8e3; }
 
 .table-hover > tbody > tr > td.warning:hover,
@@ -4028,17 +4084,28 @@ table th[class*="col-"] {
   background-color: #faf2cc; }
 
 .table > thead > tr > td.danger, table > thead > tr > td.danger,
-.table > thead > tr > th.danger, table > thead > tr > th.danger,
-.table > thead > tr.danger > td, table > thead > tr.danger > td,
-.table > thead > tr.danger > th, table > thead > tr.danger > th,
-.table > tbody > tr > td.danger, table > tbody > tr > td.danger,
-.table > tbody > tr > th.danger, table > tbody > tr > th.danger,
-.table > tbody > tr.danger > td, table > tbody > tr.danger > td,
-.table > tbody > tr.danger > th, table > tbody > tr.danger > th,
-.table > tfoot > tr > td.danger, table > tfoot > tr > td.danger,
-.table > tfoot > tr > th.danger, table > tfoot > tr > th.danger,
-.table > tfoot > tr.danger > td, table > tfoot > tr.danger > td,
-.table > tfoot > tr.danger > th, table > tfoot > tr.danger > th {
+.table > thead > tr > th.danger,
+table > thead > tr > th.danger,
+.table > thead > tr.danger > td,
+table > thead > tr.danger > td,
+.table > thead > tr.danger > th,
+table > thead > tr.danger > th,
+.table > tbody > tr > td.danger,
+table > tbody > tr > td.danger,
+.table > tbody > tr > th.danger,
+table > tbody > tr > th.danger,
+.table > tbody > tr.danger > td,
+table > tbody > tr.danger > td,
+.table > tbody > tr.danger > th,
+table > tbody > tr.danger > th,
+.table > tfoot > tr > td.danger,
+table > tfoot > tr > td.danger,
+.table > tfoot > tr > th.danger,
+table > tfoot > tr > th.danger,
+.table > tfoot > tr.danger > td,
+table > tfoot > tr.danger > td,
+.table > tfoot > tr.danger > th,
+table > tfoot > tr.danger > th {
   background-color: #f2dede; }
 
 .table-hover > tbody > tr > td.danger:hover,
@@ -5046,8 +5113,10 @@ tbody.collapse.in {
     -webkit-border-radius: 4px;
     border-radius: 4px; }
   .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a,
-  .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover,
-  .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus {
+  .nav-tabs-justified > .active > a:hover,
+  .nav-tabs.nav-justified > .active > a:hover,
+  .nav-tabs-justified > .active > a:focus,
+  .nav-tabs.nav-justified > .active > a:focus {
     border: 1px solid #ddd; }
   @media (min-width: 768px) {
     .nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a {
@@ -5055,8 +5124,10 @@ tbody.collapse.in {
       -webkit-border-radius: 4px 4px 0 0;
       border-radius: 4px 4px 0 0; }
     .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a,
-    .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover,
-    .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus {
+    .nav-tabs-justified > .active > a:hover,
+    .nav-tabs.nav-justified > .active > a:hover,
+    .nav-tabs-justified > .active > a:focus,
+    .nav-tabs.nav-justified > .active > a:focus {
       border-bottom-color: #fff; } }
 
 .tab-content > .tab-pane {
@@ -5907,8 +5978,14 @@ label {
 .color-black {
   color: #15181e; }
 
-.color-gray {
-  color: #727272; }
+.color-gray-1 {
+  color: #eee; }
+
+.color-gray-2 {
+  color: #bdbdbd; }
+
+.color-gray-3 {
+  color: #212121; }
 
 .color-1 {
   color: #ff78be; }
@@ -5922,7 +5999,7 @@ label {
 .color-4 {
   color: #043068; }
 
-[class*="hover-color"] a {
+[class*="hover-color"] a, [class*="hover-underline"] a {
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out; }
@@ -10755,7 +10832,7 @@ http://flickity.metafizzy.co
   .boxes-1 figure {
     margin-left: 0%;
     margin-right: 0%;
-    width: 100.049%; }
+    width: 100%; }
 
 .boxes-2 {
   letter-spacing: -5px;
@@ -10766,7 +10843,7 @@ http://flickity.metafizzy.co
   .boxes-2 figure {
     margin-left: 2.5%;
     margin-right: 2.5%;
-    width: 45.049%; }
+    width: 45%; }
 
 .boxes-3 {
   letter-spacing: -5px;
@@ -10777,7 +10854,7 @@ http://flickity.metafizzy.co
   .boxes-3 figure {
     margin-left: 1.66667%;
     margin-right: 1.66667%;
-    width: 30.049%; }
+    width: 30%; }
 
 .boxes-4 {
   letter-spacing: -5px;
@@ -10788,7 +10865,7 @@ http://flickity.metafizzy.co
   .boxes-4 figure {
     margin-left: 1.25%;
     margin-right: 1.25%;
-    width: 22.549%; }
+    width: 22.5%; }
 
 .boxes-5 {
   letter-spacing: -5px;
@@ -10799,7 +10876,7 @@ http://flickity.metafizzy.co
   .boxes-5 figure {
     margin-left: 1%;
     margin-right: 1%;
-    width: 18.049%; }
+    width: 18%; }
 
 .boxes-6 {
   letter-spacing: -5px;
@@ -10810,7 +10887,7 @@ http://flickity.metafizzy.co
   .boxes-6 figure {
     margin-left: 0.83333%;
     margin-right: 0.83333%;
-    width: 15.049%; }
+    width: 15%; }
 
 @media (max-width: 991px) {
   .boxes-6, .boxes-5, .boxes-4 {
@@ -10822,7 +10899,7 @@ http://flickity.metafizzy.co
     .boxes-6 figure, .boxes-5 figure, .boxes-4 figure {
       margin-left: 1.66667%;
       margin-right: 1.66667%;
-      width: 30.049%; } }
+      width: 30%; } }
 
 @media (max-width: 991px) {
   .boxes-4 {
@@ -10834,7 +10911,7 @@ http://flickity.metafizzy.co
     .boxes-4 figure {
       margin-left: 2.5%;
       margin-right: 2.5%;
-      width: 45.049%; } }
+      width: 45%; } }
 
 @media (max-width: 767px) {
   .boxes-6, .boxes-5, .boxes-4, .boxes-3 {
@@ -10846,7 +10923,7 @@ http://flickity.metafizzy.co
     .boxes-6 figure, .boxes-5 figure, .boxes-4 figure, .boxes-3 figure {
       margin-left: 2.5%;
       margin-right: 2.5%;
-      width: 45.049%; } }
+      width: 45%; } }
 
 @media (max-width: 480px) {
   .boxes-6, .boxes-5, .boxes-4, .boxes-3, .boxes-2 {
@@ -10858,7 +10935,7 @@ http://flickity.metafizzy.co
     .boxes-6 figure, .boxes-5 figure, .boxes-4 figure, .boxes-3 figure, .boxes-2 figure {
       margin-left: 0%;
       margin-right: 0%;
-      width: 100.049%; } }
+      width: 100%; } }
 
 .cell-hover {
   opacity: 0;
@@ -10917,6 +10994,7 @@ http://flickity.metafizzy.co
   display: block;
   white-space: nowrap;
   text-align: center;
+  padding: 5px 15px;
   font-family: "Open Sans"; }
   .btn-style a, .btn-def a, .btn-icon a, .btn-opacity a {
     line-height: normal;
@@ -10960,6 +11038,12 @@ http://flickity.metafizzy.co
   .btn-opacity:hover {
     border-color: #ff78be;
     color: #ff78be; }
+  .btn-opacity.reverse {
+    border-color: black;
+    color: black; }
+    .btn-opacity.reverse:hover {
+      border-color: #ff78be;
+      color: #ff78be; }
 
 [data-flicker]:before {
   opacity: 0.1;
@@ -11000,7 +11084,7 @@ http://flickity.metafizzy.co
   text-decoration: underline;
   right: 0px; }
 
-.bg-texture-1 {
+.bg-texture-1, body, #page {
   background: url("../img/bg/texture-1.jpg");
   background-position: 0 10px;
   -webkit-background-size: 160px 160px;
@@ -11298,7 +11382,7 @@ http://flickity.metafizzy.co
     transition: all 0.3s ease-in-out; }
     .menu-bottom ul:not(.sublist) > li > a {
       position: relative;
-      padding: 17px 25px;
+      padding: 17px 15px;
       display: block; }
     .menu-bottom ul:not(.sublist) > li:before {
       opacity: 0;
@@ -11381,6 +11465,11 @@ http://flickity.metafizzy.co
       color: #9a4781; }
     .brands-names a:first-child {
       margin-top: 0; }
+  @media (max-width: 991px) {
+    .brands-names {
+      -webkit-column-count: 1;
+      -moz-column-count: 1;
+      column-count: 1; } }
 
 .brands-menu-carousel .carousel-cell {
   -webkit-transition: all 0.8s ease-in-out;
@@ -11519,7 +11608,7 @@ http://flickity.metafizzy.co
     height: 100%;
     border: 0;
     background-color: transparent; }
-    .search-nav-content button .fa {
+    .search-nav-content button .fa, .search-nav-content button .short-reviews-carousel:before, .search-nav-content button .short-reviews-carousel:after {
       font-size: 17px; }
 
 .bar {
@@ -11667,14 +11756,14 @@ http://flickity.metafizzy.co
   overflow: auto;
   width: 100%; }
 
-.basket-modal-items figure {
+.basket-modal-items figure .img-content {
   height: 140px; }
-  .basket-modal-items figure .img-content {
-    height: -webkit-max-content;
-    height: -moz-max-content;
-    height: max-content; }
-    .basket-modal-items figure .img-content img {
-      height: 100%; }
+  .basket-modal-items figure .img-content img {
+    max-height: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block; }
 
 .close-content .icon-bar {
   -webkit-transform-origin: center;
@@ -11701,6 +11790,7 @@ h1, h2, h3, h4 {
 h1 {
   position: relative;
   font-weight: 700;
+  text-transform: uppercase;
   font-size: 2.0625em;
   padding-bottom: 0; }
 
@@ -11749,9 +11839,6 @@ main {
 
 hr {
   border-color: rgba(255, 255, 255, 0.2); }
-
-body, #page {
-  background-color: white; }
 
 .main-content {
   position: relative; }
@@ -11901,7 +11988,7 @@ a[target="_blank"] {
   .productions-tab .flickity-slider figure {
     margin-left: 1.25%;
     margin-right: 1.25%;
-    width: 22.549%; }
+    width: 22.5%; }
   @media (max-width: 991px) {
     .productions-tab .flickity-slider {
       letter-spacing: -5px;
@@ -11912,24 +11999,31 @@ a[target="_blank"] {
       .productions-tab .flickity-slider figure {
         margin-left: 0%;
         margin-right: 0%;
-        width: 100.049%; } }
+        width: 100%; } }
 
 .productions-tab figure {
   position: relative;
-  display: inline-block;
-  overflow: hidden;
-  border: 2px solid #eee;
-  background-color: white; }
+  display: inline-block; }
   .productions-tab figure .img-content {
     height: 220px; }
     .productions-tab figure .img-content img {
-      -webkit-transition: all 0.8s ease;
-      -o-transition: all 0.8s ease;
-      transition: all 0.8s ease;
       width: 220px; }
-  .productions-tab figure .desc-content:hover {
-    cursor: default; }
-  .productions-tab figure .circle {
+
+.hover-product.hover-content {
+  background-color: white;
+  overflow: hidden;
+  border: 2px solid #eee; }
+  .hover-product.hover-content img {
+    -webkit-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+    transition: all 0.8s ease; }
+  .hover-product.hover-content .ls-shopping-bag {
+    position: relative;
+    top: 3px; }
+  .hover-product.hover-content .ls-like {
+    position: relative;
+    top: 5px; }
+  .hover-product.hover-content .circle {
     -webkit-border-radius: 50%;
     border-radius: 50%;
     font-size: 25px;
@@ -11939,34 +12033,32 @@ a[target="_blank"] {
     height: 40px;
     display: inline-block;
     margin: 0 5px; }
-    .productions-tab figure .circle:hover {
+    .hover-product.hover-content .circle:hover {
       color: white;
       background-color: #9a4781; }
-  .productions-tab figure .ls-shopping-bag {
+  .hover-product.hover-content .cell-hover {
+    -webkit-transition: 0.7s ease;
+    -o-transition: 0.7s ease;
+    transition: 0.7s ease;
+    background-color: rgba(255, 120, 190, 0.7);
+    pointer-events: auto; }
+  .hover-product.hover-content:hover img {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1); }
+  .hover-product.hover-content:hover .desc-content {
+    z-index: 1;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     position: relative;
-    top: 3px; }
-  .productions-tab figure .ls-like {
-    position: relative;
-    top: 5px; }
-
-.productions-tab .hover-content:hover img {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1); }
-
-.productions-tab .hover-content:hover .desc-content {
-  z-index: 1;
-  position: relative;
-  color: white; }
-  .productions-tab .hover-content:hover .desc-content .price {
-    color: inherit; }
-
-.productions-tab .cell-hover {
-  -webkit-transition: 0.7s ease;
-  -o-transition: 0.7s ease;
-  transition: 0.7s ease;
-  background-color: rgba(255, 120, 190, 0.7);
-  pointer-events: auto; }
+    color: white; }
+    .hover-product.hover-content:hover .desc-content .price {
+      color: white; }
+    .hover-product.hover-content:hover .desc-content:hover {
+      color: rgba(255, 255, 255, 0.5); }
+      .hover-product.hover-content:hover .desc-content:hover h3, .hover-product.hover-content:hover .desc-content:hover p {
+        text-decoration: underline; }
 
 .productions-tablist {
   float: right;
@@ -12168,6 +12260,185 @@ a[target="_blank"] {
 .contacts-info p {
   font-size: 0.8em; }
 
+.products-items figure .img-content {
+  height: 220px; }
+  .products-items figure .img-content img {
+    width: 220px; }
+
+.products-selection form {
+  color: white; }
+  .products-selection form select {
+    min-width: 180px;
+    margin: 15px 10%;
+    padding: 10px 15px;
+    background-color: #9a4781;
+    color: white; }
+  .products-selection form select:focus, .products-selection form select:active, .products-selection form select:checked, .products-selection form option:focus, .products-selection form option:active, .products-selection form option:checked, .products-selection form form:focus, .products-selection form form:active, .products-selection form form:checked {
+    outline: none; }
+  .products-selection form option {
+    color: white;
+    background-color: #ff78be; }
+
+.brands-items .brands-item {
+  text-align: left;
+  margin: 30px 0;
+  padding: 80px 40px;
+  background-color: white;
+  border: 2px solid #ff78be; }
+
+.brands-items .brands-char {
+  font-size: 60px;
+  line-height: 100%;
+  color: #ff78be;
+  font-weight: 800;
+  text-transform: uppercase; }
+
+.products-article-content .price {
+  margin: 15px 0;
+  color: #ff78be;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.products-article-content h3 {
+  font-weight: 400; }
+
+.products-colors ul li:first-child {
+  padding-left: 0; }
+
+.products-colors .circle {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: block; }
+
+.products-cnt .products-cnt-form {
+  position: relative;
+  width: 160px; }
+
+.products-cnt button, .products-cnt input {
+  border: 0; }
+
+.products-cnt .cnt-input {
+  height: 40px;
+  text-align: center;
+  margin-left: 40px;
+  margin-right: 40px;
+  width: 80px; }
+
+.products-cnt .cnt-btn {
+  font-size: 25px;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background-color: #bdbdbd;
+  position: absolute; }
+  .products-cnt .cnt-btn.plus {
+    right: 0; }
+  .products-cnt .cnt-btn.minus {
+    left: 0; }
+
+@media (max-width: 991px) {
+  .products-cnt .products-cnt-form {
+    margin: auto; } }
+
+.products-btns .btn-opacity {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  color: black;
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase; }
+  .products-btns .btn-opacity .ls-like {
+    font-size: 22px; }
+
+.products-tabs .nav-tabs {
+  font-weight: 700; }
+  .products-tabs .nav-tabs .active a {
+    background-color: white; }
+    .products-tabs .nav-tabs .active a:focus {
+      background-color: white; }
+
+.products-tabs .tab-content {
+  padding: 30px 10px;
+  min-height: 300px; }
+
+.short-reviews-carousel h2 {
+  font-weight: 700;
+  margin-top: 10px; }
+
+.short-reviews-carousel:before, .short-reviews-carousel:after {
+  font-size: 150px;
+  opacity: 0.05;
+  position: absolute;
+  bottom: 0; }
+
+.short-reviews-carousel .pie-cell {
+  -webkit-transition: width 0.0s ease, -webkit-transform 0.3s ease-in-out;
+  transition: width 0.0s ease, -webkit-transform 0.3s ease-in-out;
+  -o-transition: transform 0.3s ease-in-out, width 0.0s ease;
+  transition: transform 0.3s ease-in-out, width 0.0s ease;
+  transition: transform 0.3s ease-in-out, width 0.0s ease, -webkit-transform 0.3s ease-in-out; }
+  .short-reviews-carousel .pie-cell.is-selected {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    z-index: 1; }
+    .short-reviews-carousel .pie-cell.is-selected .desc-content {
+      opacity: 1; }
+  .short-reviews-carousel .pie-cell:not(.is-selected) {
+    -webkit-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
+    -webkit-filter: blur(3px);
+    filter: blur(3px); }
+  .short-reviews-carousel .pie-cell:nth-child(1):nth-last-child(1) {
+    -webkit-filter: none;
+    filter: none; }
+  .short-reviews-carousel .pie-cell.is-next {
+    -webkit-transform: translateX(-19.60784%) scale(0.7);
+    -ms-transform: translateX(-19.60784%) scale(0.7);
+    transform: translateX(-19.60784%) scale(0.7); }
+  .short-reviews-carousel .pie-cell.is-prev {
+    -webkit-transform: translateX(19.60784%) scale(0.7);
+    -ms-transform: translateX(19.60784%) scale(0.7);
+    transform: translateX(19.60784%) scale(0.7); }
+  .short-reviews-carousel .pie-cell .img-content img {
+    width: 300px; }
+  .short-reviews-carousel .pie-cell .desc-content {
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    opacity: 0; }
+
+@media (max-width: 991px) {
+  .short-reviews-carousel .pie-cell {
+    width: 75% !important; }
+  .short-reviews-carousel .carousel-prev-next {
+    display: none; } }
+
+.partners-items figure {
+  float: left; }
+  .partners-items figure .img-content, .partners-items figure .desc-content {
+    min-height: 225px; }
+    .partners-items figure .img-content img, .partners-items figure .desc-content img {
+      margin: 0 auto; }
+
+.user-control h2, .user-control h1 {
+  margin: 0; }
+
+.user-control .img-content, .user-control .desc-content {
+  min-height: 100px; }
+
+.user-basket-items figure {
+  background-color: white;
+  border: 2px solid #eee; }
+
+.user-basket-items .img-content, .user-basket-items .desc-content {
+  min-height: 150px; }
+
 /*
 										 ---FOOTER---
 */
@@ -12290,8 +12561,7 @@ html body .tp-bullets.simplebullets.round .bullet {
     width: 100%;
     height: auto;
     margin-right: 10px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px; }
+    border: 2px solid #eee; }
   .carousel-article img {
     width: 100%; }
   .carousel-article .carousel-nav {
@@ -12302,12 +12572,14 @@ html body .tp-bullets.simplebullets.round .bullet {
       width: 25%;
       height: auto;
       margin-right: 10px;
-      border: 1px solid transparent;
+      border: 2px solid transparent;
       -webkit-transition: all 0.3s ease-out;
       -o-transition: all 0.3s ease-out;
       transition: all 0.3s ease-out; }
       .carousel-article .carousel-nav .carousel-cell.is-nav-selected {
         border-color: #ff78be; }
+    .carousel-article .carousel-nav .is-selected {
+      border-color: rgba(255, 120, 190, 0.2); }
   .carousel-article .flickity-prev-next-button.previous {
     left: -10px; }
   .carousel-article .flickity-prev-next-button.next {
@@ -14445,6 +14717,22 @@ html .p-r-120 {
 .inline-block {
   display: inline-block; }
 
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.flex-center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
 .li-inline-block li {
   display: inline-block; }
 
@@ -14456,6 +14744,9 @@ html .p-r-120 {
   display: table-cell;
   vertical-align: middle;
   text-align: center; }
+
+.m-0-auto {
+  margin: 0 auto; }
 
 .over-hidden {
   overflow: hidden; }

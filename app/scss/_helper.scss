@@ -540,6 +540,14 @@ html{
 .inline-block{
 	display: inline-block;
 }
+.flex{
+	display: flex;
+}
+.flex-center{
+	display: flex;
+	align-items: center;
+}
+
 .li-inline-block{
 	li{
 		display: inline-block;
@@ -556,6 +564,9 @@ html{
 	text-align: center;
 }
 
+.m-0-auto{
+	margin: 0 auto;
+}
 
 .over-hidden{
 	overflow: hidden;
