@@ -277,6 +277,55 @@
     };
     carouselArticle();
 
+
+
+
+
+
+
+
+
+
+
+
+  $(document).on("click", ".link-cart", function(){
+    var that = $(this);
+    var x= that.attr("[data-basket-area]");
+    
+    
+  })
+
+
+  function innerDiv(){
+    //data-basket-modal
+  }
+
+
+
+
+
+
+window.Basket = {
+  orders: [],
+  ordersCoutner: this.orders.length
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     function onLoaded() {
       //MASONRY
       if ($(".grid-img").length != 0) {
@@ -482,6 +531,11 @@ setTimeout(function() {
     return this;
   };
 }, 10);
+
+
+
+
+
 String.prototype.unescape = function() {
   var str;
   var winalpha = {
@@ -513,6 +567,11 @@ String.prototype.unescape = function() {
   str = decodeURIComponent(str);
   return str;
 }
+
+
+
+
+
 function checkSm() {
   return $(document).width() <= 991;
 }

@@ -56,7 +56,7 @@
 			</div>
 		</div>
 		<!-- basket-modal -->
-		<div class="basket-modal modal fade animated" id="agreementModal" tabindex="-1" role="dialog">
+		<div class="basket-modal modal fade animated" id="basket-modal" tabindex="-1" role="dialog">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<button type="button" class="btn" data-dismiss="modal"><span class="icon-bar"></span><span class="icon-bar"></span></button>
@@ -64,21 +64,7 @@
 						<div class="text-content parag-m-v-5">
 							<div class="basket-modal-items">
 
-								<figure class="col-md-12">
-									<div class="img-content pie-md-4">
-										<img src="img/productions/1.jpg" alt="">
-									</div>
-									<div class="desc-content pie-md-8">
-										<h3>Bourjois</h3>
-										<p>Помада Rouge Edition Velvet</p>
-										<div class="price color-1 text-uppercase">
-											<b>123.400 Сум</b>
-										</div>
-										<div class="btn-contnet m-v-15">
-											<a href="#" title="" underline>Удалить</a>
-										</div>
-									</div>
-								</figure>
+
 
 							</div>
 						</div>
@@ -184,13 +170,13 @@
 							<div class="header-basket pie-md-6 text-center">
 								<div class="header-baskter-content">
 									<div class="img-content">
-										<a data-toggle="modal" data-target="#agreementModal" role="button" title="">
+										<a data-toggle="modal" data-target="#basket-modal" role="button" title="">
 											<img src="img/icons/basket.png" alt="">
-											<div class="basket-circle">7</div>
+											<div class="basket-circle"><span calss="bakset-cnt">0</span></div>
 										</a>
 									</div>
 									<div class="desc-content m-v-10">
-										<p><b>В корзине 7 товаров</b></p>
+										<p><b>В корзине <span calss="bakset-cnt">0</span> товаров</b></p>
 									</div>
 								</div>
 							</div>
@@ -645,7 +631,7 @@
 											</div>
 											<a href="products-article.html" title="">
 												<div class="desc-content m-v-20">
-													<h3>Bourjois</h3>
+													<h3>11111Bourjois</h3>
 													<p>Помада Rouge Edition Velvet</p>
 													<p>12 Funchisia</p>
 													<div class="price color-1 text-uppercase m-v-30">
@@ -653,10 +639,34 @@
 													</div>
 												</div>
 											</a>
+											<!-- Контент который будет в модальном окне -->
+											<div class="product-basket-content hide">
+												<div class="col-md-12 basket-item" id="order-21">
+													<div class="img-content pie-md-4">
+														<img src="img/productions/1.jpg" alt="">
+													</div>
+													<div class="desc-content pie-md-8">
+														<h3>Bourjois</h3>
+														<p>Помада Rouge Edition Velvet</p>
+														<div class="price color-1 text-uppercase">
+															<b>123.400 Сум</b>
+														</div>
+														<div class="btn-contnet m-v-15">
+															<a href="#" title="" underline>Удалить</a>
+														</div>
+													</div>
+												</div>
+											</div>
 											<div class="cell-hover text-center">
 												<div>
-													<a href="" title=""><span class="circle"><i class="ls-like"></i></span></a>
-													<a href="" title=""><span class="circle"><i class="ls-shopping-bag"></i></span></a>
+													<a 
+													orderid="21" 
+													data-toggle="modal" 
+													data-target="#basket-modal" 
+													data-basket-item="#order-21" 
+													data-basket-area=".basket-modal-items" 
+													role="button"><span class="circle"><i class="ls-like"></i></span></a>
+													<a href="javascript:void()" title="" class="link-cart" ><span class="circle"><i class="ls-shopping-bag"></i></span></a>
 												</div>
 											</div>
 										</figure>
