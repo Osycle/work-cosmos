@@ -17,18 +17,24 @@
       AOS.refresh();
     }, 1);
 
-    panaAccordion.init({
-      id: 'accordion',
-      expandWidth: 650,
-      //itemWidth: 100,
-      extpand: 2,
-      autoPlay: !true,
-      delay: 2500,
-      animateTime: 500,
-      borderWidth: 0,
-      //deviator: 10,
-      bounce:"-50px"
-    });
+    // ELEVATEZOOM
+    if( !checkSm() )
+      $("[data-zoom-image]:not([group])").elevateZoom({
+        scrollZoom : true,
+        zoomWindowFadeIn: 500,
+        zoomWindowFadeOut: 500,
+        lensFadeIn: 300,
+        lensFadeOut: 300,
+        //cursor: 'pointer', 
+        tint:true, 
+        tintColour:'#000', 
+        tintOpacity:0.5,
+        //zoomType        : "lens",
+        //lensShape : "round",
+        //lensSize    : 200,
+        imageCrossfade: true, 
+        easing : true
+      });
   
     $("#min-menu").mmenu(
       {
@@ -204,7 +210,9 @@
     //if( $("[data-fancybox='journal']").length != 0 )
     $("[data-fancybox]").fancybox({
       afterShow: function(instance, current) {
-        jarticleCarousel.flickity("resize");
+        try{
+          jarticleCarousel.flickity("resize");
+        }catch(e){console.info(e)}
       }
     });
 
