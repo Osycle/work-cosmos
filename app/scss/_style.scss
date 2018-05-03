@@ -2078,7 +2078,6 @@ a[target="_blank"]{
 	line-height: 170%;
 	background-repeat: no-repeat;
 	background-position-y: bottom;
-	background-image: url("../img/bg/footer.jpg");
 }
 .footer-socicons{
 	font-size: 25px;
@@ -2111,6 +2110,7 @@ a[target="_blank"]{
 	}
 }
 html body{
+	
 	.tp-bullets.simplebullets.round .bullet{
 		background-image: none;
 		background-color: rgba( $color-2, 0.5 );

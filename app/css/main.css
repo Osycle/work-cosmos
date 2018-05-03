@@ -12467,8 +12467,7 @@ a[target="_blank"] {
   min-height: 150px;
   line-height: 170%;
   background-repeat: no-repeat;
-  background-position-y: bottom;
-  background-image: url("../img/bg/footer.jpg"); }
+  background-position-y: bottom; }
 
 .footer-socicons {
   font-size: 25px; }

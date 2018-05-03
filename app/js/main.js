@@ -283,32 +283,75 @@
 
 
 
+window.Basket = {
+  storageName:  location.hostname+"-basket",
+  orders: [],
+  basketModal: ".basket-modal-items",
+  json: localStorage[this.storageName],
+  initBasket: function(){
+
+    if(localStorage[this.storageName])
+      this.orders = JSON.parse(localStorage[this.storageName]);
+
+    $(".bakset-cnt").text(this.orders.length);
+    console.log($(".bakset-cnt"), this.orders.length)
+    for (var i = 0; i < this.orders.length; i++) {
+      $(this.basketModal).append(this.orders[i].template)
+    }
+  },
+  changeBasket: function(){
+   localStorage[this.storageName] = JSON.stringify(this.orders);
+  },
+  removeBasketItem: function(id){
+    var arr = [];
+    //TODO
+    var arrTemp = this.orders.map(function(el, i){
+      if(el.id != id)
+        return el;
+    })
+    for (var i = 0; i<arrTemp.length; i++ ){
+      if( typeof arrTemp[i] === "undefined" )
+        continue;
+      arr.push(arrTemp[i]);
+    }
+    this.changeBasket();
+    return arr;
+  }
+  
+}
+Basket.initBasket();
 
 
 
 
-
+  $("[data-order-del]").on("click", function(){
+    var that = $(this);
+    var orderEl = $(that.attr("data-order-del")).slideDown();
+    console.log(orderEl);
+  })
+  
   $(document).on("click", ".link-cart", function(){
     var that = $(this);
-    var x= that.attr("[data-basket-area]");
-    
-    
+    appedBasket( that );
   })
 
+  function appedBasket(that){
 
-  function innerDiv(){
-    //data-basket-modal
+    var template = $(that.attr("data-basket-template"));
+    var basketArea = $(that.attr("data-basket-area"));
+    var orderid = that.attr("orderid");
+
+
+    var order = {
+      id: orderid,
+      template: template[0].outerHTML
+    }
+
+    Basket.orders.push(order);
+    localStorage[ Basket.storageName ] = JSON.stringify(Basket.orders);
+    console.log( order );
+    basketArea.append( template );
   }
-
-
-
-
-
-
-window.Basket = {
-  orders: [],
-  ordersCoutner: this.orders.length
-}
 
 
 
@@ -343,15 +386,21 @@ window.Basket = {
     //SCROLL
     var minMenu = $(".header-scroll") || null;
     var headerRange = false;
+
+
     $(window).on("scroll", function(e) {
+
       if ($(window).scrollTop() > 50 && headerRange == false) {
+
         headerRange = true;
         if (minMenu) minMenu.addClass("scrolled").addClass("down");
+        
       } else if ($(window).scrollTop() < 50 && headerRange == true) {
         headerRange = !true;
         if (minMenu) minMenu.removeClass("scrolled");
       } //.originalEvent.wheelDelta
     });
+
 
     $(window).on("mousewheel", function(event) {
       if (!headerRange) return;
