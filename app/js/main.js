@@ -292,30 +292,49 @@ window.Basket = {
 
     if(localStorage[this.storageName])
       this.orders = JSON.parse(localStorage[this.storageName]);
-
-    $(".bakset-cnt").text(this.orders.length);
-    console.log($(".bakset-cnt"), this.orders.length)
-    for (var i = 0; i < this.orders.length; i++) {
+    for (var i = 0; i < this.orders.length; i++)
       $(this.basketModal).append(this.orders[i].template)
-    }
+    this.changeBasket();
   },
   changeBasket: function(){
-   localStorage[this.storageName] = JSON.stringify(this.orders);
+    localStorage[this.storageName] = JSON.stringify(this.orders);
+    $(".bakset-cnt").text(this.orders.length);
+  },
+  checkOrderid: function(id){
+    for (var i = 0; i < this.orders.length; i++) {
+      if( this.orders[i].id == id)
+        return true;
+    }
+    return false;
+  },
+  appedBasket: function(that){
+
+    var orderid = that.attr("data-orderid");
+
+    if( Basket.checkOrderid(orderid) ) 
+      return;
+
+    var template = that.attr("data-order-template");
+        template = $("[data-template='"+template+"']").eq(0);
+    var basketArea = $(that.attr("data-basket"));
+
+    console.log( that )
+    var order = {
+      id: orderid,
+      template: template[0].outerHTML
+    }
+
+    Basket.orders.push(order);
+    localStorage[ Basket.storageName ] = JSON.stringify(Basket.orders);
+    
+    basketArea.append( template );
+    this.changeBasket()
   },
   removeBasketItem: function(id){
-    var arr = [];
-    //TODO
-    var arrTemp = this.orders.map(function(el, i){
-      if(el.id != id)
-        return el;
+    this.orders = this.orders.filter(function(el, i){
+      return el.id != id;
     })
-    for (var i = 0; i<arrTemp.length; i++ ){
-      if( typeof arrTemp[i] === "undefined" )
-        continue;
-      arr.push(arrTemp[i]);
-    }
     this.changeBasket();
-    return arr;
   }
   
 }
@@ -326,32 +345,18 @@ Basket.initBasket();
 
   $("[data-order-del]").on("click", function(){
     var that = $(this);
-    var orderEl = $(that.attr("data-order-del")).slideDown();
-    console.log(orderEl);
+    var attr = that.attr("data-order-del");
+    Basket.removeBasketItem(attr);
+    //$("[data-order-template"+attr+"]").slideDown();
+    console.log()
   })
   
   $(document).on("click", ".link-cart", function(){
     var that = $(this);
-    appedBasket( that );
+    Basket.appedBasket( that );
   })
 
-  function appedBasket(that){
 
-    var template = $(that.attr("data-basket-template"));
-    var basketArea = $(that.attr("data-basket-area"));
-    var orderid = that.attr("orderid");
-
-
-    var order = {
-      id: orderid,
-      template: template[0].outerHTML
-    }
-
-    Basket.orders.push(order);
-    localStorage[ Basket.storageName ] = JSON.stringify(Basket.orders);
-    console.log( order );
-    basketArea.append( template );
-  }
 
 
 
