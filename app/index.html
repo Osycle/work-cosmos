@@ -24,35 +24,95 @@
 				<br/> Пожалуйста подключите в настройках браузера Javascript</p>
 		</noscript>
 		<!-- entry-modal -->
-		<div class="entry-modal modal fade animated" id="formEntry" tabindex="-1" role="dialog">
+		<div class="entry-modal modal fade animated" id="form-entry" tabindex="-1" role="dialog">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<button type="button" class="btn" data-dismiss="modal"><span class="icon-bar"></span><span class="icon-bar"></span></button>
 					<div class="modal-body">
-						<form method="POST" action="">
-							<h3>Войти</h3>
-							<div class="col-md-12">
-								<label>Логин
-									<input class="form-control" type="text" name="" value="">
-								</label>
-							</div>
-							<div class="col-md-12">
-								<label>Пароль
-									<input class="form-control" type="text" name="" value="">
-								</label>
-							</div>
-							<div class="col-md-12 m-v-5">
-								<p><b><a href="reg.html" title="" underline>Регистрация</a></b></p>
-							</div>
-							<br>
-							<div class="form-footer">
-								<button type="submit" class="text-right btn-def color-white btn-res"><b>Вход</b></button>
-							</div>
-						</form>
+						<!-- success-info -->
+						<div class="col-md-12 success-info m-b-30 text-center">
+							<font color="red"><div class="info-suc" id=""></div></font>
+							<font color="green"><div class="info-err" id=""></div></font>
+						</div>
+						<div class="form-content col-md-12">
+							<form method="POST" action="">
+								<h3>Войти</h3>
+								<div class="col-md-12">
+									<label>Логин
+										<input class="form-control" type="text" name="" value="">
+									</label>
+								</div>
+								<div class="col-md-12">
+									<label>Пароль
+										<input class="form-control" type="text" name="" value="">
+									</label>
+								</div>
+								<div class="col-md-12 m-v-5">
+									<p><b><a href="reg.html" title="" underline>Регистрация</a></b></p>
+								</div>
+								<br>
+								<div class="form-footer">
+									<button type="submit" class="text-right btn-def color-white btn-res"><b>Вход</b></button>
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<!-- wholesalers-modal -->
+		<div class="wholesalers-modal modal fade animated" id="form-wholesalers" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<button type="button" class="btn" data-dismiss="modal"><span class="icon-bar"></span><span class="icon-bar"></span></button>
+					<div class="modal-body">
+
+						<!-- success-info -->
+						<div class="col-md-12 success-info m-b-30 text-center">
+							<font color="red"><div class="info-suc" id=""></div></font>
+							<font color="green"><div class="info-err" id=""></div></font>
+						</div>
+						<div class="form-content col-md-12">
+							<form method="POST" action="">
+							<h3>Для оптовиков</h3>
+							<div class="col-md-12">
+								<label class="box-100">Название фирмы
+									<input class="form-control" type="text" name="" value="">
+								</label>
+							</div>
+							<div class="col-md-12">
+								<label class="box-100">ФИО
+									<input class="form-control" type="text" name="" value="">
+								</label>
+							</div>
+							<div class="col-md-12">
+								<label class="box-100">E-mail
+									<input class="form-control" type="text" name="" value="">
+								</label>
+							</div>
+							<div class="col-md-12">
+								<label class="box-100">Телефон
+									<input class="form-control" type="text" name="" value="">
+								</label>
+							</div>
+							<div class="col-md-12">
+								<label class="box-100">Сообщение
+									<textarea name="" class="form-control" resize="none"></textarea>
+								</label>
+							</div>
+
+							<br>
+							<div class="form-footer m-v-30 clearfix col-md-12">
+								<button type="submit" class="text-right btn-def color-white btn-res"><b>Отправить</b></button>
+							</div>
+							</form>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- basket-modal -->
 		<div class="basket-modal modal fade animated" id="basket-modal" tabindex="-1" role="dialog">
 			<div class="modal-dialog" role="document">
@@ -92,7 +152,7 @@
 									</div>
 								</a>
 								<div class="panel-face p-h-15">
-									<a data-toggle="modal" data-target="#formEntry" role="button" title="">
+									<a data-toggle="modal" data-target="#form-entry" role="button" title="">
 										<span class="icon-content vam"><i class="ls-avatar"></i></span>
 										<span class="text-content vam"><p>Мой кабинет</p></span>
 									</div>
@@ -602,8 +662,8 @@
 												<div>
 													<a><span class="circle"><i class="ls-like"></i></span></a>
 													<a href="#" title="" class="link-cart" data-toggle="modal" data-target="#basket-modal" role="button"
-															data-orderid="111" 
-															data-order-template="order-111" 
+															data-order-id="111" 
+															data-order-templateid="order-111" 
 															data-basket=".basket-modal-items">
 															<span class="circle"><i class="ls-shopping-bag"></i></span>
 													</a>
@@ -611,7 +671,7 @@
 											</div>
 											<div class="product-basket-content hide">
 												<!-- Контент который будет в модальном окне -->
-												<div class="col-md-12 basket-item" data-template="order-111">
+												<div class="col-md-12 basket-item" data-templateid="order-111">
 													<div class="img-content pie-md-4">
 														<img src="img/productions/1.jpg" alt="">
 													</div>
@@ -622,13 +682,13 @@
 															<b>123.400 Сум</b>
 														</div>
 														<div class="btn-contnet m-v-15">
-															<a href="#" title="" underline 
-															data-order-del="order-111">Удалить</a>
+															<span  underline data-order-del="111" data-template-del="order-111">Удалить</span>
 														</div>
 													</div>
 												</div>
 											</div>
 										</figure>
+
 										<!-- item -->
 										<figure class="hover-content hover-product">
 											<div class="img-content pie-flex-center">
@@ -650,8 +710,8 @@
 												<div>
 													<a><span class="circle"><i class="ls-like"></i></span></a>
 													<a href="#" title="" class="link-cart" data-toggle="modal" data-target="#basket-modal" role="button"
-															data-orderid="222" 
-															data-order-template="order-222" 
+															data-order-id="222" 
+															data-order-templateid="order-222" 
 															data-basket=".basket-modal-items">
 															<span class="circle"><i class="ls-shopping-bag"></i></span>
 													</a>
@@ -659,19 +719,18 @@
 											</div>
 											<div class="product-basket-content hide">
 												<!-- Контент который будет в модальном окне -->
-												<div class="col-md-12 basket-item" data-template="order-222">
+												<div class="col-md-12 basket-item" data-templateid="order-222">
 													<div class="img-content pie-md-4">
 														<img src="img/productions/1.jpg" alt="">
 													</div>
 													<div class="desc-content pie-md-8">
-														<h3>111111111Bourjois</h3>
+														<h3>222222222Bourjois</h3>
 														<p>Помада Rouge Edition Velvet</p>
 														<div class="price color-1 text-uppercase">
 															<b>123.400 Сум</b>
 														</div>
 														<div class="btn-contnet m-v-15">
-															<a href="#" title="" underline 
-															data-order-del="order-222">Удалить</a>
+															<span underline  data-order-del="222" data-template-del="order-222">Удалить</span>
 														</div>
 													</div>
 												</div>
@@ -1103,6 +1162,52 @@
 						</div>
 					</div>
 				</div>
+				<!-- wholesalers -->
+				<div class="wholesalers">
+					<div class="container p-b-30 m-v-30">
+						<div class="row">
+							<div class="col-md-4 p-h-15 m-v-30">
+								<div class="text-content">
+									<h4>Lorem ipsum</h4>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+										cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+									</p>
+								</div>
+								<div class="btn-content">
+									<span class="btn-def col-md-6">
+										<a data-toggle="modal" data-target="#form-wholesalers" role="button">Для оптовиков</a>
+									</span>
+								</div>
+							</div>
+							<!-- wholesalers-carousel -->
+							<div class="wholesalers-carousel col-md-8 p-h-15 m-v-30">
+								<div class="flickity-btn-1 clearfix m-v-10">
+									<div class="carousel-items">
+										<figure>
+											<a href="partners.html">
+												<div class="img-content" style="background-image: url('img/other/wholesalers.jpg') "></div>
+											</a>
+										</figure>
+										<figure>
+											<a href="partners.html">
+												<div class="img-content" style="background-image: url('img/other/wholesalers.jpg') "></div>
+											</a>
+										</figure>
+									</div>
+									<div class="carousel-prev-next hide">
+										<span class="next"> <i class="fa fa-angle-right"></i></span>
+										<span class="prev"> <i class="fa fa-angle-left"></i></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 				<!-- short-delivery -->
 				<div class="short-delivery">
 					<div class="container color-white p-v-60">
@@ -1249,17 +1354,18 @@
 							<p><b>Контактная информация: </b></p>
 							<p>г. Ташкент улица Дагбитская 24/5</p>
 						</div>
-						<div class="footer-socicons col-md-6 m-v-10 text-center hover-color-1">
+						<div class="footer-socicons col-md-4 m-v-10 text-center hover-color-1">
 							<ul class="list-inline">
 								<li><a href="" title=""><i class="ls-facebook"></i></a></li>
 								<li><a href="" title=""><i class="ls-instagram"></i></a></li>
 								<li><a href="" title=""><i class="ls-telegram"></i></a></li>
 							</ul>
 						</div>
-						<div class="payicons col-md-3 filter-white">
+						<div class="payicons col-md-5 text-right-md li-m-default">
 							<ul class="list-inline">
 								<li><a href="" title=""><img src="img/other/logo-click.png" alt=""></a></li>
 								<li><a href="" title=""><img src="img/other/logo-payme.png" alt=""></a></li>
+								<li><a href="" title=""><img src="img/other/logo-uzcard.png" alt=""></a></li>
 							</ul>
 						</div>
 					</div>

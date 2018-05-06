@@ -536,41 +536,68 @@
 					<div class="container">
 						<div class="products-selection">
 							<div class="form-selection text-center">
+								<h3 class="visible-xs visible-sm">Фильтрация</h3>
 								<form action="" method="" accept-charset="utf-8">
-									<select name="">
-										<option value="">Категория</option>
-										<option value="">Палетки</option>
-										<option value="">Лицо</option>
-										<option value="">Глаза</option>
-										<option value="">Брови</option>
-										<option value="">Губы</option>
-										<option value="">Аксессуары</option>
-										<option value="">Кисти</option>
-										<option value="">Ногти</option>
-									</select>
-									<select name="">
-										<option value="">Mybeline</option>
-										<option value="">Rolear</option>
-										<option value="">Leoral</option>
-										<option value="">Bland</option>
-										<option value="">Gupim</option>
-										<option value="">Gucci</option>
-										<option value="">Dakesto</option>
-										<option value="">Mybeline</option>
-										<option value="">Rolear</option>
-										<option value="">Leoral</option>
-										<option value="">Bland</option>
-										<option value="">Gupim</option>
-										<option value="">Gucci</option>
-										<option value="">Dakesto</option>
-										<option value="">Mybeline</option>
-										<option value="">Rolear</option>
-										<option value="">Leoral</option>
-										<option value="">Bland</option>
-										<option value="">Gupim</option>
-										<option value="">Gucci</option>
-										<option value="">Dakesto</option>
-									</select>
+									<div class="row">
+										<div class="col-md-2 col-sm-4 col-xs-12 m-v-15 p-h-15">
+											<select class="js-select search-hide">
+												<option value="1">Все подразделы</option>
+												<option value="1">Макияж</option>
+												<option value="1">Парфюмерия</option>
+												<option value="1">Украшения</option>
+											</select>
+										</div>
+										<div class="col-md-2 col-sm-4 col-xs-12 m-v-15 p-h-15">
+											<select class="js-select search-hide">
+												<option value="1">Все подразделы</option>
+												<option value="1">Палетки</option>
+												<option value="1">Лицо</option>
+												<option value="1">Глаза</option>
+												<option value="1">Брови</option>
+												<option value="1">Губы</option>
+												<option value="1">Аксессуары</option>
+												<option value="1">Кисти</option>
+												<option value="1">Ногти</option>
+											</select>
+										</div>
+										<div class="col-md-2 col-sm-4 col-xs-12 m-v-15 p-h-15">
+											<select class="js-select" name="state">
+												<option value="1">Все бренды</option>
+												<option value="1">Mybeline</option>
+												<option value="1">Rolear</option>
+												<option value="1">Leoral</option>
+												<option value="1">Bland</option>
+												<option value="1">Gupim</option>
+												<option value="1">Gucci</option>
+												<option value="1">Dakesto</option>
+												<option value="1">Mybeline</option>
+												<option value="1">Rolear</option>
+												<option value="1">Leoral</option>
+												<option value="1">Bland</option>
+												<option value="1">Gupim</option>
+												<option value="1">Gucci</option>
+												<option value="1">Dakesto</option>
+												<option value="1">Mybeline</option>
+												<option value="1">Rolear</option>
+												<option value="1">Leoral</option>
+												<option value="1">Bland</option>
+												<option value="1">Gupim</option>
+												<option value="1">Gucci</option>
+												<option value="1">Dakesto</option>
+											</select>
+										</div>
+										<div class="col-md-2 col-sm-4 col-xs-12 m-v-15 input p-h-15">
+											<input type="number" name="" placeholder="Мин. цена" class="form-control"/>
+										</div>
+										<div class="col-md-2 col-sm-4 col-xs-12 m-v-15 input p-h-15">
+											<input type="number" name="" placeholder="Макс. цена" class="form-control"/>
+										</div>
+										<div class="col-md-2 col-sm-4 col-xs-12 m-v-15 p-h-15 btn-content">
+											<span class="btn-def">
+												<button type="submit" class="btn-res box-100">Найти</button>
+											</span>
+										</div>
+									</div>
 								</form>
 							</div>
 						</div>
@@ -879,8 +906,8 @@
 					<div class="footer-logo col-md-3 m-v-30">
 						<div class="img-content filter-white">
 							<a href="index.html" title="">
-																<img src="img/logo.png" alt="">
-															</a>
+								<img src="img/logo.png" alt="">
+							</a>
 						</div>
 					</div>
 					<div class="footer-menu col-md-9 m-v-35 hidden-xs hidden-sm hover-color-1 hover-underline">
@@ -938,155 +965,9 @@
 		<!-- jQuery REVOLUTION Slider  -->
 		<script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 		<script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVUinUZqQAIM1NfbavWbOKtsc3l-XE_ag"></script>
-		<script type="text/javascript">
-		if (document.getElementById("map-canvas")) {
-			var map;
 
-			function initialize() {
 
-				var mapOptions = {
-					mapTypeId: google.maps.MapTypeId.ROADMAP,
-					mapTypeControl: false,
-					zoom: 12,
-					zoomControl: true,
-					zoomControlOptions: {
-						style: google.maps.ZoomControlStyle.DEFAULT,
-						position: google.maps.ControlPosition.DEFAULT
-					},
-					panControl: true,
-					panControlOptions: {
-						position: google.maps.ControlPosition.LEFT_TOP
-					},
-					streetViewControl: false,
-					scaleControl: false,
-					overviewMapControl: false,
-					center: new google.maps.LatLng(41.34765, 69.354354343)
-				};
 
-				map = new google.maps.Map(document.getElementById('map-canvas'),
-					mapOptions);
-
-				var mapStyles = [{
-					"featureType": "landscape",
-					"stylers": [
-						{ "visibility": "on" },
-						{ "hue": "#0033ff" },
-						{ "saturation": -100 },
-						{ "lightness": 77 },
-						{ "gamma": 0.34 }
-					]
-				}, {
-					"featureType": "water",
-					"stylers": [
-						{ "visibility": "on" },
-						{ "hue": "#ff0000" },
-						{ "saturation": -100 },
-						{ "lightness": 23 },
-						{ "gamma": 1 }
-					]
-				}, {
-					"featureType": "water",
-					"elementType": "labels",
-					"stylers": [
-						{ "visibility": "on" }
-					]
-				}, {
-					"featureType": "administrative",
-					"stylers": [
-						{ "visibility": "on" }
-					]
-				}, {
-					"featureType": "administrative",
-					"elementType": "labels",
-					"stylers": [
-						{ "visibility": "on" }
-					]
-				}, {
-					"featureType": "poi",
-					"stylers": [
-						{ "visibility": "on" },
-						{ "hue": "#ff0000" },
-						{ "saturation": -100 },
-						{ "lightness": 0 },
-						{ "gamma": 1 }
-					]
-				}, {
-					"featureType": "road",
-					"stylers": [
-						{ "visibility": "on" },
-						{ "hue": "#ff0000" },
-						{ "saturation": -100 },
-						{ "lightness": 0 },
-						{ "gamma": 1 }
-					]
-				}, {
-					"featureType": "transit",
-					"stylers": [
-						{ "visibility": "on" },
-						{ "hue": "#ff0000" },
-						{ "saturation": -100 },
-						{ "lightness": 0 },
-						{ "gamma": 1 }
-					]
-				}];
-
-				map.setOptions({
-					styles: mapStyles,
-					disableDefaultUI: true
-				});
-
-				var transitLayer = new google.maps.TransitLayer();
-				transitLayer.setMap(map);
-
-				var bicyclingLayer = new google.maps.BicyclingLayer();
-				bicyclingLayer.setMap(map);
-
-				var infoContent = '<div class="window-content align-center">' +
-					'<p>м. Львов, вул. Мирзо Улугбек, 317</p>' +
-					'</div>';
-
-				var infowindow = new google.maps.InfoWindow({
-					content: infoContent
-				});
-
-				var icon = {
-					path: 'M16.5,51s-16.5-25.119-16.5-34.327c0-9.2082,7.3873-16.673,16.5-16.673,9.113,0,16.5,7.4648,16.5,16.673,0,9.208-16.5,34.327-16.5,34.327zm0-27.462c3.7523,0,6.7941-3.0737,6.7941-6.8654,0-3.7916-3.0418-6.8654-6.7941-6.8654s-6.7941,3.0737-6.7941,6.8654c0,3.7916,3.0418,6.8654,6.7941,6.8654z',
-					anchor: new google.maps.Point(16.5, 51),
-					fillColor: '#9a4781',
-					fillOpacity: 1,
-					strokeWeight: 0,
-					scale: 0.85
-				};
-
-				var marker = new google.maps.Marker({
-					position: new google.maps.LatLng(41.34765, 69.354354343),
-					map: map,
-					icon: icon,
-					title: 'marker'
-				});
-
-				google.maps.event.addListener(marker, 'click', function() {
-					infowindow.open(map, marker);
-				});
-			}
-
-			google.maps.event.addDomListener(window, 'load', initialize);
-
-			function checkResize() {
-				var center = map.getCenter();
-				google.maps.event.trigger(map, 'resize');
-				map.setCenter(center);
-			}
-
-			window.onresize = checkResize;
-		}
-		</script>
-		<style>
-		#map-canvas {
-			height: 480px;
-		}
-		</style>
 </body>
 
 </html>

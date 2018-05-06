@@ -12,14 +12,25 @@
       duration: 1100,
       delay: 150
     });
+    setTimeout(function() { AOS.refresh(); }, 1);
 
-    setTimeout(function() {
-      AOS.refresh();
-    }, 1);
-
+    //SELECT2
+    $(".js-select").select2({
+      placeholder: "Выберите...",
+      allowClear: false
+    });
+    $(".js-select.search-hide").select2({
+      minimumResultsForSearch: Infinity 
+    });
+    // FANCYBOX
+    if ($("[data-fancybox='gallery']").length != 0)
+      $("[data-fancybox='gallery']").fancybox({
+        afterShow: function(instance, current) {},
+        transitionEffect: "zoom-in-out"
+      });
     // ELEVATEZOOM
     if( !checkSm() )
-      $("[data-zoom-image]:not([group])").elevateZoom({
+      var x = $("[data-zoom-image]:not([group])").elevateZoom({
         scrollZoom : true,
         zoomWindowFadeIn: 500,
         zoomWindowFadeOut: 500,
@@ -35,7 +46,9 @@
         imageCrossfade: true, 
         easing : true
       });
-  
+
+
+    //MIN-MENU
     $("#min-menu").mmenu(
       {
         extensions: [
@@ -58,7 +71,7 @@
             content: [
               '<div class="close-btn close-content bar">' +
                 '<a  href="#page" ><span class="icon-bar"></span><span class="icon-bar"></span></a>' +
-                "</div>"
+              '</div>'
             ]
           },
           {
@@ -69,11 +82,9 @@
       {}
     );
 
-    // Flikity Carousel
+    //FLIKITY
     function flickityPrevNext(className) {
-
       var carouselWrapper = $(className);
-
       for (var i = 0; i < carouselWrapper.length; i++) {
         var crs = $(carouselWrapper[i]); 
         var carousel = crs.find(".carousel-items");
@@ -112,20 +123,20 @@
     };
 
     var brandMenu = $('.brands-menu-carousel .carousel-items').flickity({
-        imagesLoaded: true,
-        autoPlay: false,
-        arrowShape: arrowStyle,
-        initialIndex: 0,
-        prevNextButtons: false,
-        draggable: false,
-        friction: 1,
-        selectedAttraction: 1,
-        wrapAround: true, 
-        pageDots: false,
-        contain: true,
-        percentPosition: true,
-        cellAlign: 'center'
-      });
+      imagesLoaded: true,
+      autoPlay: false,
+      arrowShape: arrowStyle,
+      initialIndex: 0,
+      prevNextButtons: false,
+      draggable: false,
+      friction: 1,
+      selectedAttraction: 1,
+      wrapAround: true, 
+      pageDots: false,
+      contain: true,
+      percentPosition: true,
+      cellAlign: 'center'
+    });
 
     $('.button-group').on( 'click', 'li', function() {
       var that = $(this);
@@ -137,7 +148,7 @@
       brandMenu.flickity( 'selectCell', selector );
     });
 
-
+    //short-partners-carousel
     if( $(".short-partners-carousel .carousel-items figure").length > 3 )
       $('.short-partners-carousel .carousel-items').flickity({
         imagesLoaded: true,
@@ -183,7 +194,7 @@
         },200)
       })
     })
-    //flickityPrevNext( ".productions-carousel" );
+    //short-reviews-carousel
     if( $(".short-reviews-carousel .carousel-items figure").length > 1 )
       $('.short-reviews-carousel .carousel-items').flickity({
         imagesLoaded: true,
@@ -201,39 +212,27 @@
       });
     flickityPrevNext( $('.short-reviews-carousel') );
 
-    // FANCYBOX
-    if ($("[data-fancybox='gallery']").length != 0)
-      $("[data-fancybox='gallery']").fancybox({
-        afterShow: function(instance, current) {},
-        transitionEffect: "zoom-in-out"
-      });
-    //if( $("[data-fancybox='journal']").length != 0 )
-    $("[data-fancybox]").fancybox({
-      afterShow: function(instance, current) {
-        try{
-          jarticleCarousel.flickity("resize");
-        }catch(e){console.info(e)}
+    //wholesalers-carousel
+    $(".wholesalers-carousel .carousel-items").flickity({
+        imagesLoaded: true,
+        autoPlay: false,
+        pauseAutoPlayOnHover: true,
+        arrowShape: arrowStyle,
+        initialIndex: 1,
+        friction: 1,
+        selectedAttraction: 1,
+        prevNextButtons: true,
+        draggable: checkSm(),
+        wrapAround: true,
+        pageDots: true,
+        contain: false,
+        percentPosition: true,
+        cellAlign: "center"
       }
-    });
+    );
 
-    //$.fancybox.open('');
-    if ($(".short-advert-carousel .carousel-items figure").length > 1)
-      var carouselAdvert = $(".short-advert-carousel .carousel-items").flickity(
-        {
-          imagesLoaded: true,
-          autoPlay: false,
-          pauseAutoPlayOnHover: true,
-          arrowShape: arrowStyle,
-          initialIndex: 1,
-          prevNextButtons: false,
-          draggable: true,
-          wrapAround: false,
-          pageDots: true,
-          contain: false,
-          percentPosition: true,
-          cellAlign: "center"
-        }
-      );
+
+
 
 
 
@@ -250,14 +249,41 @@
               prevNextButtons: false,
               cellAlign: "center",
               bgLazyLoad: 1,
-              //friction: 1,
-              //selectedAttraction: 1,
+              friction: 1,
+              selectedAttraction: 1,
               initialIndex: 0,
               draggable: true,
               contain: true,
               pageDots: false
             });
           var flkty = crs.data("flickity");
+
+          //ГК
+          crs.on( 'settle.flickity', function(e) {
+            $(flkty.selectedElement).siblings().css("pointer-events", "none");
+            var selecedIndex =  carouselMain.find(".carousel-cell.is-selected").index()+1;
+            
+            console.log(this, e);
+            var zoomContainer = $(".zoomContainer") || null
+            if( !zoomContainer )
+              return;
+            zoomContainer.removeClass("is-selected");
+            zoomContainer.filter("[zoomitem='"+selecedIndex+"']").addClass("is-selected");
+            if( !zoomContainer.hasClass("zoom-image") )
+              zoomContainer.map(function(i, el){
+                $(el).addClass("zoom-image")
+                if(i === 0)
+                  $(el).addClass("is-selected")                
+
+                console.log($(el), i)
+                $(el).attr( "zoomitem", (i+1) )
+              })
+
+
+          })
+          crs.on( 'select.flickity', function(e) {
+            $(flkty.selectedElement).css("pointer-events", "");
+          })
 
           $(carouselNav)
             .eq(i)
@@ -276,8 +302,10 @@
       }
     };
     carouselArticle();
-
-
+    //carouselProducts
+    if( $(".products-article").length != 0 )
+      $(".products-article").addClass("load");
+    
 
 
 
@@ -309,13 +337,13 @@ window.Basket = {
   },
   appedBasket: function(that){
 
-    var orderid = that.attr("data-orderid");
+    var orderid = that.attr("data-order-id");
 
     if( Basket.checkOrderid(orderid) ) 
       return;
 
-    var template = that.attr("data-order-template");
-        template = $("[data-template='"+template+"']").eq(0);
+    var template = that.attr("data-order-templateid");
+        template = $("[data-templateid='"+template+"']").eq(0);
     var basketArea = $(that.attr("data-basket"));
 
     console.log( that )
@@ -334,6 +362,7 @@ window.Basket = {
     this.orders = this.orders.filter(function(el, i){
       return el.id != id;
     })
+    console.log( this.orders )
     this.changeBasket();
   }
   
@@ -345,10 +374,11 @@ Basket.initBasket();
 
   $("[data-order-del]").on("click", function(){
     var that = $(this);
-    var attr = that.attr("data-order-del");
-    Basket.removeBasketItem(attr);
-    //$("[data-order-template"+attr+"]").slideDown();
-    console.log()
+    var orderId = that.attr("data-order-del");
+    var templateId = that.attr("data-template-del");
+    Basket.removeBasketItem(orderId);
+    //TODO : Повторное нажатие
+    $("[data-templateid='"+templateId+"']").slideUp(400, function(){  });
   })
   
   $(document).on("click", ".link-cart", function(){
@@ -383,10 +413,8 @@ Basket.initBasket();
           percentPosition: true
         });
       }
-
+      
     }
-    //var index = $(".rev-slider:not(.banner-slider)").length || null;
-    //if (!index) $(".header-scroll").addClass("header-pages");
 
     //SCROLL
     var minMenu = $(".header-scroll") || null;
