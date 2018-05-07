@@ -11507,7 +11507,7 @@ http://flickity.metafizzy.co
   font-family: "Open Sans"; }
   .btn-style a, .btn-def a, .btn-icon a, .btn-opacity a {
     line-height: normal;
-    padding: 10px 25px;
+    padding: 7px 25px;
     display: block;
     position: relative; }
   .btn-style i, .btn-def i, .btn-icon i, .btn-opacity i {
@@ -11789,6 +11789,31 @@ http://flickity.metafizzy.co
     background-color: #ff78be;
     color: white; }
 
+.lang-carousel-items .carousel-cell {
+  width: 100px; }
+  .lang-carousel-items .carousel-cell a:hover img {
+    -webkit-filter: brightness(120%);
+    filter: brightness(120%); }
+  .lang-carousel-items .carousel-cell img {
+    margin-top: -1px;
+    margin-right: 5px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+
+.lang-carousel-items .flickity-prev-next-button {
+  background-color: transparent; }
+  .lang-carousel-items .flickity-prev-next-button svg {
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5); }
+  .lang-carousel-items .flickity-prev-next-button .arrow {
+    fill: #ff78be; }
+  .lang-carousel-items .flickity-prev-next-button.previous {
+    display: none; }
+  .lang-carousel-items .flickity-prev-next-button.next {
+    right: -15px; }
+
 .menu {
   height: 60px;
   text-align: right;
@@ -11925,7 +11950,6 @@ http://flickity.metafizzy.co
   padding-top: 10px;
   width: 800px;
   position: absolute;
-  background-color: white;
   color: black;
   -webkit-transition: all 0.4s ease-out 0.1s;
   -o-transition: all 0.4s ease-out 0.1s;
@@ -11960,6 +11984,7 @@ http://flickity.metafizzy.co
       color: #ff78be; }
 
 .submenu-box-wrapper {
+  background-color: white;
   border: 2px solid #ff78be;
   padding: 30px 30px 45px 40px; }
 
@@ -12259,7 +12284,7 @@ http://flickity.metafizzy.co
   padding: 0 30px; }
 
 .basket-modal .modal-dialog {
-  width: 500px; }
+  width: 800px; }
 
 .basket-modal .modal-body {
   padding-bottom: 30px; }
@@ -12267,7 +12292,8 @@ http://flickity.metafizzy.co
 .basket-modal .text-content {
   min-height: 15vh;
   max-height: 70vh;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   width: 100%; }
 
 .basket-modal-items figure .img-content {
@@ -12278,6 +12304,11 @@ http://flickity.metafizzy.co
     height: auto;
     margin: 0 auto;
     display: block; }
+
+.basket-modal-items .btn-content span {
+  text-decoration: underline; }
+  .basket-modal-items .btn-content span:hover {
+    cursor: pointer; }
 
 .close-content .icon-bar {
   -webkit-transform-origin: center;
@@ -12556,6 +12587,8 @@ a[target="_blank"] {
     transition: 0.7s ease;
     background-color: rgba(255, 120, 190, 0.7);
     pointer-events: auto; }
+    .hover-product.hover-content .cell-hover a:focus {
+      outline: none; }
   .hover-product.hover-content:hover img {
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
@@ -12908,6 +12941,7 @@ a[target="_blank"] {
   height: 40px;
   text-align: center;
   margin-left: 40px;
+  background-color: white;
   margin-right: 40px;
   width: 80px; }
 
@@ -13024,6 +13058,9 @@ a[target="_blank"] {
 
 .wholesalers-carousel .carousel-items .img-content {
   background-position: center;
+  -webkit-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
   width: 100%;
   height: 400px; }
 
@@ -13067,6 +13104,50 @@ a[target="_blank"] {
 
 .reg-form input {
   width: 100%; }
+
+.basket-items figure {
+  height: 150px; }
+  .basket-items figure .img-content .img {
+    -webkit-filter: drop-shadow(0 0 10px #eee);
+    filter: drop-shadow(0 0 10px #eee);
+    width: 100%;
+    height: 150px;
+    background-position: left;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover; }
+  .basket-items figure .counter-content button {
+    border: 0;
+    width: 25%;
+    background-color: transparent;
+    border: 2px solid #ff78be;
+    font-size: 20px;
+    font-weight: 600;
+    width: 40px;
+    height: 40px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .basket-items figure .counter-content button:hover {
+      background-color: #ff78be;
+      color: white; }
+  .basket-items figure .counter-content input.cnt-input {
+    width: 50%;
+    height: 40px;
+    text-align: center;
+    border: 0;
+    border: 2px solid #ff78be;
+    background-color: white;
+    font-size: 20px;
+    font-weight: 600; }
+  @media (max-width: 991px) {
+    .basket-items figure {
+      height: auto; }
+      .basket-items figure .img-content .img {
+        height: 300px;
+        background-position: center;
+        -webkit-background-size: contain;
+        background-size: contain; } }
 
 /*
 										 ---FOOTER---
