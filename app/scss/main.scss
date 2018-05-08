@@ -1,5 +1,4 @@
 
-$plugins_path: "plugins/";
 
 //THEME
 @import "_normalize";
@@ -24,5 +23,5 @@ $plugins_path: "plugins/";
 
 //OTHER
 //@import "_min-menu";
-@import "icomoon/style.scss";
+@import "../icomoon/_style.scss";
 @import "_style";
