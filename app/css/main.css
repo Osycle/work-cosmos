@@ -12973,22 +12973,27 @@ a[target="_blank"] {
   font-weight: 800;
   text-transform: uppercase; }
 
-.products-article .carousel-main {
-  height: 250px; }
-  .products-article .carousel-main img {
-    max-height: 100%;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-    display: block; }
-    .products-article .carousel-main img:not([width]) {
-      width: auto; }
-  .products-article .carousel-main img {
-    -webkit-filter: drop-shadow(0 0 10px #eee);
-    filter: drop-shadow(0 0 10px #eee);
+.products-article .carousel-main img {
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block; }
+  .products-article .carousel-main img:not([width]) {
+    width: auto; }
+
+.products-article .carousel-main img {
+  -webkit-filter: drop-shadow(0 0 10px #eee);
+  filter: drop-shadow(0 0 10px #eee); }
+
+.products-article .carousel-main .carousel-cell {
+  border: 0; }
+
+@media (max-width: 991px) {
+  .products-article .carousel-main {
     height: 250px; }
-  .products-article .carousel-main .carousel-cell {
-    border: 0; }
+    .products-article .carousel-main img {
+      height: 250px; } }
 
 .products-article.load .carousel-main .carousel-cell {
   opacity: 0;

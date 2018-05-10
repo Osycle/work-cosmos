@@ -1946,14 +1946,22 @@ a[target="_blank"]{
 //.products-article
 .products-article{
 	.carousel-main{
-		height: 250px;
+		
 		@include img-auto-adaptive;
 		img{
 			filter: drop-shadow(0 0 10px $color-gray-1);
-			height: 250px;
+			
 		}
 		.carousel-cell{
 			border: 0;
+		}
+	}
+	@media ( max-width:991px ){
+		.carousel-main{
+			height: 250px;
+			img{
+				height: 250px;
+			}
 		}
 	}
 }
