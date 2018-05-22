@@ -347,12 +347,25 @@
     productsCounter();
 
 
+    var menuBottom = $(".menu-bottom:eq(0)");
+    if( menuBottom.length )
+      $(".menu-bottom .submenu-maquillage").map(function(i, el){
+        el = $(el);
+        var menuBottomOffset = menuBottom.offset().left+menuBottom.width();
+        var subMenuOffset = el.offset().left+el.width()
+        var remainder = menuBottomOffset-subMenuOffset;
+        
+        if( remainder < 0 )
+          el.offset({
+            left:  $(el).offset().left+remainder
+          })
+      })
 
 
-
-
-
-
+    window.toggleLabelCheckbox = function( that ){
+      $(that).find(".fa-square-o").toggleClass("hide")
+      $(that).find(".fa-check-square-o").toggleClass("hide")
+    }
 
 
 /*TODO

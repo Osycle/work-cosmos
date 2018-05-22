@@ -662,6 +662,7 @@ $header-min-menu: 100px;
 
 .menu-bottom{
 	height: 50px;
+	position: relative;
 	ul:not(.sublist)>li{
 		margin: 0 0;
 		position: relative;
@@ -686,6 +687,12 @@ $header-min-menu: 100px;
 			&:before{
 				transform: scale(1);
 				opacity: 1;
+			}
+		}
+		@media ( max-width:1199px ){
+			min-width: auto;
+			a{
+				//padding: 17px 5px;
 			}
 		}
 	}
@@ -2249,11 +2256,11 @@ a[target="_blank"]{
 	}
 }
 .reg-form{
-	label{
-		width: 100%;
-	}
-	input{
-		width: 100%;
+	.checkout-checkbox{
+		input{
+			width: 15px;
+			height: 15px;
+		}
 	}
 }
 
@@ -2268,7 +2275,7 @@ a[target="_blank"]{
 //basket
 .basket-items{
 	figure{
-		height: 150px;
+		//height: 150px;
 		.img-content{
 			.img{
 				//border: 2px solid $color-gray-1;
