@@ -19,47 +19,47 @@
 
 <body>
 	<div id="page">
-		<noscript>
-			<p>Ваш браузер не поддерживает скрипты!
-				<br/> Пожалуйста подключите в настройках браузера Javascript</p>
-		</noscript>
-		<!-- entry-modal -->
-		<div class="entry-modal modal fade animated" id="form-entry" tabindex="-1" role="dialog">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<button type="button" class="btn" data-dismiss="modal"><span class="icon-bar"></span><span class="icon-bar"></span></button>
-					<div class="modal-body">
-						<!-- success-info -->
-						<div class="col-md-12 success-info m-b-30 text-center">
-							<font color="red"><div class="info-suc" id=""></div></font>
-							<font color="green"><div class="info-err" id=""></div></font>
-						</div>
-						<div class="form-content col-md-12">
-							<form method="POST" action="">
-								<h3>Войти</h3>
-								<div class="col-md-12">
-									<label>Логин
-										<input class="form-control" type="text" name="" value="">
-									</label>
-								</div>
-								<div class="col-md-12">
-									<label>Пароль
-										<input class="form-control" type="text" name="" value="">
-									</label>
-								</div>
-								<div class="col-md-12 m-v-5">
-									<p><b><a href="reg.html" title="" underline>Регистрация</a></b></p>
-								</div>
-								<br>
-								<div class="form-footer">
-									<button type="submit" class="text-right btn-def color-white btn-res"><b>Вход</b></button>
-								</div>
-							</form>
-						</div>
+	<!-- entry-modal -->
+	<div class="entry-modal modal fade animated" id="form-entry" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<button type="button" class="btn" data-dismiss="modal"><span class="icon-bar"></span><span class="icon-bar"></span></button>
+				<div class="modal-body">
+					<!-- success-info -->
+					<div class="col-md-12 success-info m-b-30 text-center">
+						<font color="red"><div class="info-suc" id=""></div></font>
+						<font color="green"><div class="info-err" id=""></div></font>
+					</div>
+					<div class="form-content col-md-12">
+						<form method="POST" action="">
+							<h3>Войти</h3>
+							<div class="col-md-12">
+								<label>Логин
+									<input class="form-control" type="text" name="" value="">
+								</label>
+							</div>
+							<div class="col-md-12">
+								<label>Пароль
+									<input class="form-control" type="text" name="" value="">
+								</label>
+							</div>
+							<div class="col-md-12 m-v-5">
+								<p><b><a href="reg.html" title="" underline>Регистрация</a></b></p>
+							</div>
+							<br>
+							<div class="form-footer">
+								<button type="submit" class="text-right btn-def color-white btn-res"><b>Вход</b></button>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+		<noscript>
+			<p>Ваш браузер не поддерживает скрипты!
+				<br/> Пожалуйста подключите в настройках браузера Javascript</p>
+		</noscript>
 		<!-- wholesalers-modal -->
 		<div class="wholesalers-modal modal fade animated" id="form-wholesalers" tabindex="-1" role="dialog">
 			<div class="modal-dialog" role="document">
@@ -1071,6 +1071,39 @@
 		<!-- MIN MENU -->
 		<div id="min-menu">
 			<ul>
+				<div class="user-panel clearfix p-h-15 text-center p-v-10 m-b-10 hover-color-1 ">
+					<div class="col-xs-4">
+						<a href="favorites.html" role="button">
+							<div class="panel-favorites p-h-15">
+								<span class="icon-content vam"><i class="ls-like"></i></span>
+							</div>
+						</a>
+					</div>
+					<div class="col-xs-4">
+						<div class="lang p-v-10 text-center text-uppercase">
+							<div class="lang-carousel-items">
+
+								<div class="carousel-cell">
+									<div class="link-content">
+										<a href="" title=""><img src="img/icons/uz.jpg" alt="">Uz</a>
+									</div>
+								</div>
+								
+								<div class="carousel-cell">
+									<div class="link-content">
+										<a href="" title=""><img src="img/icons/ru.jpg" alt="">Ru</a>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+					<a data-toggle="modal" data-target="#form-entry" role="button" title="">
+						<span class="icon-content vam"><i class="ls-avatar"></i></span>
+					</a>
+					</div>
+				</div>
 				<li class="active"><a href="delivery.html" title="">Доставка</a></li>
 				<li><a href="about.html" title="">О компании</a></li>
 				<li><a href="contacts.html" title="">Контакты</a></li>

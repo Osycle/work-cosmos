@@ -49,7 +49,7 @@
 
 
     //MIN-MENU
-    $("#min-menu").mmenu({
+    var minMenu = $("#min-menu").mmenu({
       extensions: [
         "pagedim-black", // wrapper-bg black
         "theme-dark",
@@ -57,17 +57,18 @@
         //"listview-50",
         //"fx-panels-slide-up",
         //"fx-listitems-drop",
-        "border-offset",
-        "position-front",
-        "position-right"
+        "border-offset"
+        //"position-front",
+        //"position-center"
       ],
       navbar: {
         title: "Меню"
       },
       navbars: [{
           height: 2,
+          //position: "bottom",
           content: [
-            '<div class="close-btn close-content bar">' +
+            '<div class="close-btn hide close-content bar">' +
             '<a  href="#page" ><span class="icon-bar"></span><span class="icon-bar"></span></a>' +
             '</div>'
           ]
@@ -78,6 +79,13 @@
       ]
     }, {});
 
+    var userPanel = minMenu.find(".user-panel") || null;
+    if( userPanel )
+      $(".mm-navbars-top").append( userPanel );
+    minMenu.after( $(".entry-modal") );
+    console.log($("[href='"+minMenu.attr("id")+"']"), minMenu.attr("id"))
+    $(document).on("click", "[href='#"+minMenu.attr("id")+"']", landCarousel)
+    
     //FLIKITY
     function flickityPrevNext(className) {
       var carouselWrapper = $(className);
@@ -209,20 +217,26 @@
     flickityPrevNext($('.short-reviews-carousel'));
 
     //lang-carousel
-    $(".lang-carousel-items").flickity({
-      imagesLoaded: true,
-      autoPlay: false,
-      pauseAutoPlayOnHover: true,
-      arrowShape: arrowStyle,
-      initialIndex: 1,
-      prevNextButtons: true,
-      draggable: checkSm(),
-      wrapAround: true,
-      pageDots: false,
-      contain: false,
-      percentPosition: true,
-      cellAlign: "center"
-    });
+    function landCarousel(){
+      var crs = $(".lang-carousel-items").flickity({
+        imagesLoaded: true,
+        autoPlay: false,
+        pauseAutoPlayOnHover: true,
+        arrowShape: arrowStyle,
+        initialIndex: 1,
+        prevNextButtons: true,
+        draggable: checkSm(),
+        wrapAround: true,
+        pageDots: false,
+        contain: false,
+        percentPosition: true,
+        cellAlign: "center"
+      })
+      crs.data("flickity");
+      crs.flickity("resize");
+      
+    }
+    landCarousel();
     //wholesalers-carousel
     $(".wholesalers-carousel .carousel-items").flickity({
       imagesLoaded: true,

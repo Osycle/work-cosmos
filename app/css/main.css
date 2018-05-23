@@ -12179,8 +12179,27 @@ http://flickity.metafizzy.co
   width: 35px;
   height: 35px; }
 
+.mm-listview {
+  margin-top: 0 !important; }
+
 .mm-slideout {
   z-index: auto; }
+
+.mm-hasnavbar-top-3 .mm-panels {
+  top: 150px; }
+
+.mm-menu .lang-carousel-items .flickity-prev-next-button.previous {
+  display: block;
+  left: 0; }
+
+.mm-menu .lang-carousel-items .flickity-prev-next-button.next {
+  right: 0; }
+
+.mm-menu .user-panel {
+  top: 0;
+  z-index: 1; }
+  .mm-menu .user-panel i {
+    color: white; }
 
 .mm-navbar {
   position: relative; }
@@ -12196,6 +12215,9 @@ http://flickity.metafizzy.co
     filter: drop-shadow(0 -5px 1px #ff5fb2);
     width: 110px;
     margin-top: 15px; }
+
+.mm-navbar-size-2 {
+  height: 40px; }
 
 .search-nav-content {
   position: relative; }
@@ -13202,6 +13224,9 @@ a[target="_blank"] {
 
 .user-basket-items .img-content, .user-basket-items .desc-content {
   min-height: 150px; }
+
+label {
+  width: 100%; }
 
 .user-settings label, .user-settings input {
   width: 100%; }
