@@ -450,7 +450,8 @@ $header-min-menu: 100px;
 		display: flex;
 	}
 	.icon-content{
-		font-size: 24px;
+		font-size: 20px;
+		line-height: 0;
 		i{
 			vertical-align: middle;
 		}
@@ -476,14 +477,14 @@ $header-min-menu: 100px;
 }
 .header-basket{
 	.img-content{
-		width: 40px;
+		width: 50px;
 		margin: auto;
 		margin-bottom: 0;
 		position: relative;
 	}
 	.basket-circle{
-		width: 22px;
-		height: 22px;
+		width: 25px;
+		height: 25px;
 		font-weight: 600;
 		font-size: 14px;
 		color: white;
@@ -491,9 +492,22 @@ $header-min-menu: 100px;
 		border: 2px solid white;
 		border-radius: 50%;
 		position: absolute;
+		background-color: $color-2;
+		right: -13px;
+		top: 13px;
+		.bakset-cnt{
+			line-height: 22px;
+		}
+	}
+	.icon-wrapper{
 		background-color: $color-1;
-		right: -8px;
-		top: 0;
+		width: 50px;
+		border-radius: 4px;
+		height: 50px;
+		.fa{
+			font-size: 20px;
+			color: white;
+		}
 	}
 }
 .lang{
@@ -848,7 +862,7 @@ $header-min-menu: 100px;
 	z-index: 100;
 	color: white;
 	box-shadow: 0 0 20px 0 black;
-	background-color: darken($color-1, 5%);
+	background-color: $color-1;
 	.wrapper-bg{
 		@extend .fuller;
     background-size: 800px;
@@ -939,7 +953,7 @@ $header-min-menu: 100px;
 	form{
 		position: relative;
 		.search-input{
-			width: 300px;
+			width: 240px;
 			height: 23px;
 			margin-left: auto;
 		}
@@ -1233,7 +1247,7 @@ h1{
 }
 h2{
 	font-size: em(28, 16);
-	font-weight: 700;
+	font-weight: 600;
 	margin-top: 20px;
 	margin-bottom: 10px;
 } 
@@ -1383,21 +1397,25 @@ a[target="_blank"]{
 		
 		h1, p{
 			white-space: normal;
-			color: white;	
 			text-align: center;
 			position: relative;
+			color: $color-2;
 		}
 		h1{
+			font-family: $font-family-3;
 			line-height: 140%;
 			padding-bottom: 0;
-			font-family: $font-family-1;
 		}
 		h1{
 			text-transform: uppercase;
 			margin: 0;
 			padding: 10px 5px;
-			font-size: 30px;
+			font-size: 38px;
 			font-weight: 700;
+		}
+		h3{
+			text-transform: uppercase;
+			color: $color-2;
 		}
 		p{
 			font-weight: 400;
@@ -1540,15 +1558,66 @@ a[target="_blank"]{
 
 //short-advantages
 .short-advantages{
-	@extend .default-shadow;
+	//@extend .default-shadow;
+	background-color: white;
 	font-size: 1.05em;
+	box-shadow: 0 0 30px -10px black;
+	position: relative;
 	figure{
 		vertical-align: middle;
 		.img-content{
 			height: 70px;
 		}
+		.icon{
+			position: relative;
+			background-color: transparent;
+			width: 76px;
+			height: 76px;
+			.fa{
+				font-size: 25px;
+				position: relative;
+			}
+			&, &:before{
+				transition: all 0.2s ease 0.2s;
+				border: 1px solid #b7b7b7;
+				border-radius: 50%;
+			}
+			&:before{
+				@extend .claf; 
+				width: 60px;
+				left: 7px;
+				top: 7px;
+				height: 60px;
+			}
+		}
+		&:hover{
+			.icon{
+				color: white;
+				border-color: $color-1;
+				&:before{
+					background-color: $color-1;
+					border-color: $color-1;
+				}
+			}
+		}
 	}
 }
+.short-advantages-items{
+
+	&.boxes{
+	 @include boxes-items( 75, 3 );
+	 	@media (max-width: 991px) {
+	 		@include boxes-items( 100, 1 );
+	 	}
+	}
+}
+
+
+
+
+
+
+
 
 .productions-tab{
 	.flickity-viewport{
@@ -1776,7 +1845,7 @@ a[target="_blank"]{
 		line-height:100%;
 	}
 	.desc-content{
-		height: 180px;
+
 	}
 	.form-content{
 		input{
@@ -1807,7 +1876,6 @@ a[target="_blank"]{
 	}
 	.bg-wrapper{
 		box-shadow: 0 0 55px -20px black;
-		background-color: white;
 	}
 	@media (max-width: 991px) {
 		.btn-search{
@@ -1886,6 +1954,31 @@ a[target="_blank"]{
 	.js-select{
 		height: 500px;
 	}
+
+	.cnt-input{
+		text-align: center;
+		padding: 5px 40px;
+	}
+	.input-arrow{
+		z-index:1;
+		position: absolute;
+		width: 100%;
+		top: 50%;
+		margin-top: -8px;
+		left: 0;
+		button{
+			color: $color-1;
+			position: absolute;
+		}
+		.plus{
+			right: 30px;
+		}
+		.minus{
+			left: 30px;
+		}
+
+	}
+
 }
 .select2-container--default{
 	.select2-selection--single{

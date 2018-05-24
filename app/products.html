@@ -572,7 +572,7 @@
 				<!-- products -->
 				<div class="products">
 					<div class="container">
-						<div class="products-selection">
+						<div class="products-selection products-cnt-form">
 							<div class="form-selection text-center">
 								<h3 class="visible-xs visible-sm">Фильтрация</h3>
 								<form action="" method="" accept-charset="utf-8">
@@ -624,12 +624,21 @@
 												<option value="1">Dakesto</option>
 											</select>
 										</div>
-										<div class="col-md-2 col-sm-4 col-xs-12 m-v-15 input p-h-15">
-											<input type="number" name="" placeholder="Мин. цена" class="form-control"/>
+										<div class="col-md-2 col-sm-4 col-xs-12 m-v-15 input p-h-15" data-counter="1000">
+											<input type="text" name="" placeholder="Мин. цена" class="form-control cnt-input" data-counter-input/>
+											<div class="input-arrow">
+												<button type="button" class="btn-res minus" data-counter-btn><i class="fa fa-minus"></i></a></button>
+												<button type="button" class="btn-res plus" data-counter-btn><i class="fa fa-plus"></i></a></button>
+											</div>
 										</div>
-										<div class="col-md-2 col-sm-4 col-xs-12 m-v-15 input p-h-15">
-											<input type="number" name="" placeholder="Макс. цена" class="form-control"/>
+										<div class="col-md-2 col-sm-4 col-xs-12 m-v-15 input p-h-15" data-counter="1000">
+											<input type="text" name="" placeholder="Макс. цена" class="form-control cnt-input" data-counter-input/>
+											<div class="input-arrow">
+												<button type="button" class="btn-res minus" data-counter-btn><i class="fa fa-minus"></i></a></button>
+												<button type="button" class="btn-res plus" data-counter-btn><i class="fa fa-plus"></i></a></button>
+											</div>
 										</div>
+
 										<div class="col-md-2 col-sm-4 col-xs-12 m-v-15 p-h-15 btn-content">
 											<span class="btn-def">
 												<button type="submit" class="btn-res box-100">Найти</button>

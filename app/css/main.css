@@ -11369,18 +11369,18 @@ http://flickity.metafizzy.co
 /*
 	_style.css
 */
-.default-shadow, .header-scroll.scrolled .header-middle-content, .header-scroll.header-pages .header-middle-content, .header-scroll.scrolled .header-bottom-content, .header-scroll.header-pages .header-bottom-content, .short-advantages {
+.default-shadow, .header-scroll.scrolled .header-middle-content, .header-scroll.header-pages .header-middle-content, .header-scroll.scrolled .header-bottom-content, .header-scroll.header-pages .header-bottom-content {
   -webkit-box-shadow: 0 3px 20px -10px black;
   box-shadow: 0 3px 20px -10px black; }
 
-.fuller, .claf, [data-flicker]:before, .menu li:before, .menu li:after, .menu-bottom ul:not(.sublist) > li:before, html body .tp-bullets.simplebullets.round .bullet:before, .cell-hover, .hover-content .cell-hover, .min-menu-header .wrapper-bg, .fullscreen-container .wrapper-bg {
+.fuller, .claf, [data-flicker]:before, .menu li:before, .menu li:after, .menu-bottom ul:not(.sublist) > li:before, .short-advantages figure .icon:before, html body .tp-bullets.simplebullets.round .bullet:before, .cell-hover, .hover-content .cell-hover, .min-menu-header .wrapper-bg, .fullscreen-container .wrapper-bg {
   height: 100%;
   width: 100%;
   position: absolute;
   top: 0;
   left: 0; }
 
-.claf, [data-flicker]:before, .menu li:before, .menu li:after, .menu-bottom ul:not(.sublist) > li:before, html body .tp-bullets.simplebullets.round .bullet:before {
+.claf, [data-flicker]:before, .menu li:before, .menu li:after, .menu-bottom ul:not(.sublist) > li:before, .short-advantages figure .icon:before, html body .tp-bullets.simplebullets.round .bullet:before {
   content: ""; }
 
 .clafclear {
@@ -11812,7 +11812,8 @@ http://flickity.metafizzy.co
   display: flex; }
 
 .user-panel .icon-content {
-  font-size: 24px; }
+  font-size: 20px;
+  line-height: 0; }
   .user-panel .icon-content i {
     vertical-align: middle; }
 
@@ -11834,14 +11835,14 @@ http://flickity.metafizzy.co
     filter: brightness(50%); }
 
 .header-basket .img-content {
-  width: 40px;
+  width: 50px;
   margin: auto;
   margin-bottom: 0;
   position: relative; }
 
 .header-basket .basket-circle {
-  width: 22px;
-  height: 22px;
+  width: 25px;
+  height: 25px;
   font-weight: 600;
   font-size: 14px;
   color: white;
@@ -11850,9 +11851,21 @@ http://flickity.metafizzy.co
   -webkit-border-radius: 50%;
   border-radius: 50%;
   position: absolute;
+  background-color: #9a4781;
+  right: -13px;
+  top: 13px; }
+  .header-basket .basket-circle .bakset-cnt {
+    line-height: 22px; }
+
+.header-basket .icon-wrapper {
   background-color: #ff78be;
-  right: -8px;
-  top: 0; }
+  width: 50px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  height: 50px; }
+  .header-basket .icon-wrapper .fa, .header-basket .icon-wrapper .short-reviews-carousel:before, .header-basket .icon-wrapper .short-reviews-carousel:after {
+    font-size: 20px;
+    color: white; }
 
 .lang {
   height: 45px; }
@@ -12159,7 +12172,7 @@ http://flickity.metafizzy.co
   color: white;
   -webkit-box-shadow: 0 0 20px 0 black;
   box-shadow: 0 0 20px 0 black;
-  background-color: #ff5fb2; }
+  background-color: #ff78be; }
   .min-menu-header .wrapper-bg {
     -webkit-background-size: 800px 800px;
     background-size: 800px;
@@ -12224,7 +12237,7 @@ http://flickity.metafizzy.co
   .search-nav-content form {
     position: relative; }
     .search-nav-content form .search-input {
-      width: 300px;
+      width: 240px;
       height: 23px;
       margin-left: auto; }
     .search-nav-content form input {
@@ -12448,7 +12461,7 @@ h1 {
 
 h2 {
   font-size: 1.75em;
-  font-weight: 700;
+  font-weight: 600;
   margin-top: 20px;
   margin-bottom: 10px; }
 
@@ -12555,19 +12568,22 @@ a[target="_blank"] {
     text-align: center; }
     .rev-slider .slide-header h1, .rev-slider .slide-header p {
       white-space: normal;
-      color: white;
       text-align: center;
-      position: relative; }
+      position: relative;
+      color: #9a4781; }
     .rev-slider .slide-header h1 {
+      font-family: "Days";
       line-height: 140%;
-      padding-bottom: 0;
-      font-family: "Open Sans"; }
+      padding-bottom: 0; }
     .rev-slider .slide-header h1 {
       text-transform: uppercase;
       margin: 0;
       padding: 10px 5px;
-      font-size: 30px;
+      font-size: 38px;
       font-weight: 700; }
+    .rev-slider .slide-header h3 {
+      text-transform: uppercase;
+      color: #9a4781; }
     .rev-slider .slide-header p {
       font-weight: 400;
       display: inline-block;
@@ -12619,11 +12635,63 @@ a[target="_blank"] {
   line-height: 200%; }
 
 .short-advantages {
-  font-size: 1.05em; }
+  background-color: white;
+  font-size: 1.05em;
+  -webkit-box-shadow: 0 0 30px -10px black;
+  box-shadow: 0 0 30px -10px black;
+  position: relative; }
   .short-advantages figure {
     vertical-align: middle; }
     .short-advantages figure .img-content {
       height: 70px; }
+    .short-advantages figure .icon {
+      position: relative;
+      background-color: transparent;
+      width: 76px;
+      height: 76px; }
+      .short-advantages figure .icon .fa, .short-advantages figure .icon .short-reviews-carousel:before, .short-advantages figure .icon .short-reviews-carousel:after {
+        font-size: 25px;
+        position: relative; }
+      .short-advantages figure .icon, .short-advantages figure .icon:before {
+        -webkit-transition: all 0.2s ease 0.2s;
+        -o-transition: all 0.2s ease 0.2s;
+        transition: all 0.2s ease 0.2s;
+        border: 1px solid #b7b7b7;
+        -webkit-border-radius: 50%;
+        border-radius: 50%; }
+      .short-advantages figure .icon:before {
+        width: 60px;
+        left: 7px;
+        top: 7px;
+        height: 60px; }
+    .short-advantages figure:hover .icon {
+      color: white;
+      border-color: #ff78be; }
+      .short-advantages figure:hover .icon:before {
+        background-color: #ff78be;
+        border-color: #ff78be; }
+
+.short-advantages-items.boxes {
+  letter-spacing: -5px;
+  margin-left: -4.16667%;
+  margin-right: -4.16667%; }
+  .short-advantages-items.boxes * {
+    letter-spacing: 0; }
+  .short-advantages-items.boxes figure {
+    margin-left: 4.16667%;
+    margin-right: 4.16667%;
+    width: 25%; }
+  @media (max-width: 991px) {
+    .short-advantages-items.boxes {
+      letter-spacing: -5px;
+      margin-left: 0%;
+      margin-right: 0%; }
+      .short-advantages-items.boxes * {
+        letter-spacing: 0; }
+      .short-advantages-items.boxes figure {
+        margin-left: 0%;
+        margin-right: 0%;
+        width: 100%; } }
 
 .productions-tab .flickity-viewport {
   width: 100%;
@@ -12863,9 +12931,6 @@ a[target="_blank"] {
 .subscribe h2 {
   line-height: 100%; }
 
-.subscribe .desc-content {
-  height: 180px; }
-
 .subscribe .form-content input {
   border: 0;
   height: 50px;
@@ -12895,8 +12960,7 @@ a[target="_blank"] {
 
 .subscribe .bg-wrapper {
   -webkit-box-shadow: 0 0 55px -20px black;
-  box-shadow: 0 0 55px -20px black;
-  background-color: white; }
+  box-shadow: 0 0 55px -20px black; }
 
 @media (max-width: 991px) {
   .subscribe .btn-search {
@@ -12944,6 +13008,25 @@ a[target="_blank"] {
 
 .form-selection .js-select {
   height: 500px; }
+
+.form-selection .cnt-input {
+  text-align: center;
+  padding: 5px 40px; }
+
+.form-selection .input-arrow {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  margin-top: -8px;
+  left: 0; }
+  .form-selection .input-arrow button {
+    color: #ff78be;
+    position: absolute; }
+  .form-selection .input-arrow .plus {
+    right: 30px; }
+  .form-selection .input-arrow .minus {
+    left: 30px; }
 
 .select2-container--default .select2-selection--single {
   height: auto;
@@ -15619,8 +15702,8 @@ img[auto] {
   filter: brightness(0%) invert(0%); }
 
 .filter-color-1 {
-  -webkit-filter: brightness(0%) invert(60%) sepia() hue-rotate(180deg);
-  filter: brightness(0%) invert(60%) sepia() hue-rotate(180deg); }
+  -webkit-filter: brightness(0%) invert(76%) sepia() saturate(6000%) hue-rotate(290deg);
+  filter: brightness(0%) invert(76%) sepia() saturate(6000%) hue-rotate(290deg); }
 
 /*
 		_media.scss	

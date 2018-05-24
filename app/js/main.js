@@ -336,20 +336,21 @@
 
     //products counter
     function productsCounter(){
-      var form = $(".products-cnt-form form") || null;
+      var form = $("[data-counter]") || null;;
       if( !form )
         return;
+      var cntfactor = form.attr("data-counter")*1;
 
-      $(document).on("click", ".cnt-btn", function(){
+      $(document).on("click", "[data-counter-btn]", function(){
         var cntVal;
-        var cntInput = $(this).closest(".products-cnt-form").find(".cnt-input");
+        var cntInput = $(this).closest( form ).find("[data-counter-input]");
         
         cntVal = (cntInput.val()*1);
 
         if( $(this).hasClass("plus") )
-          cntVal = cntVal + 1;
+          cntVal = cntVal + cntfactor;
         if( $(this).hasClass("minus") & cntVal > 0 )
-          cntVal = cntVal - 1;
+          cntVal = cntVal - cntfactor;
         if( isNaN( cntVal ) ) cntVal = 0;
         cntInput.val( cntVal ).attr("value", cntVal)
       })
@@ -827,3 +828,22 @@ function scrolledDiv(el) {
 
   return elBottom <= docViewBottom && elTop >= docViewTop;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
