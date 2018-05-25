@@ -83,7 +83,6 @@
     if( userPanel )
       $(".mm-navbars-top").append( userPanel );
     minMenu.after( $(".entry-modal") );
-    console.log($("[href='"+minMenu.attr("id")+"']"), minMenu.attr("id"))
     $(document).on("click", "[href='#"+minMenu.attr("id")+"']", landCarousel)
     
     //FLIKITY
@@ -237,6 +236,7 @@
       
     }
     landCarousel();
+
     //wholesalers-carousel
     $(".wholesalers-carousel .carousel-items").flickity({
       imagesLoaded: true,
@@ -259,7 +259,7 @@
 
 
 
-
+    // Стандартный карусель
     window.carouselArticle = function() {
       if ($(".carousel-article").length >= 0) {
         var carouselMain = $(".carousel-article .carousel-main"),
@@ -334,8 +334,8 @@
 
 
 
-    //products counter
-    function productsCounter(){
+    // Прибавление-убавление значении
+    (function(){
       var form = $("[data-counter]") || null;;
       if( !form )
         return;
@@ -351,37 +351,56 @@
           cntVal = cntVal + cntfactor;
         if( $(this).hasClass("minus") & cntVal > 0 )
           cntVal = cntVal - cntfactor;
-        if( isNaN( cntVal ) ) cntVal = 0;
+        if( isNaN( cntVal ) || cntVal < 0) cntVal = 0;
         cntInput.val( cntVal ).attr("value", cntVal)
       })
       $(".cnt-input").on( "keypress", function(e){
         //console.log(this, e);
       } )
 
-    }
-    productsCounter();
+    })();
+    
 
-
-    var menuBottom = $(".menu-bottom:eq(0)");
-    if( menuBottom.length )
-      $(".menu-bottom .submenu-maquillage").map(function(i, el){
-        el = $(el);
-        var menuBottomOffset = menuBottom.offset().left+menuBottom.width();
-        var subMenuOffset = el.offset().left+el.width()
-        var remainder = menuBottomOffset-subMenuOffset;
-        
-        if( remainder < 0 )
-          el.offset({
-            left:  $(el).offset().left+remainder
-          })
-      })
-
-
-    window.toggleLabelCheckbox = function( that ){
-      $(that).find(".fa-square-o").toggleClass("hide")
-      $(that).find(".fa-check-square-o").toggleClass("hide")
-    }
-
+    // Адаптивное подменю
+    (function(){
+      var menuBottom = $(".menu-bottom:eq(0)");
+      if( menuBottom.length )
+        $(".menu-bottom .submenu-maquillage").map(function(i, el){
+          el = $(el);
+          var menuBottomOffset = menuBottom.offset().left+menuBottom.width();
+          var subMenuOffset = el.offset().left+el.width()
+          var remainder = menuBottomOffset-subMenuOffset;
+          
+          if( remainder < 0 )
+            el.offset({
+              left:  $(el).offset().left+remainder
+            })
+        })
+      })();
+      
+     // Иконка чекбокса
+     (function(){
+        window.toggleLabelCheckbox = function( that ){
+          $(that).find(".fa-square-o").toggleClass("hide")
+          $(that).find(".fa-check-square-o").toggleClass("hide")
+        }
+      })();
+    // Правильное окончание слово "товар"
+    (function(){
+      var basketText = $(".basket-text") || null;
+      var basketCnt = $(".basket-cnt").text() || false;
+      if( !basketText || !basketCnt.length )
+        return;
+      var basketCnt = basketCnt.substring( basketCnt.length-1, basketCnt.length )*1;
+      if( basketCnt === 0 )
+        basketText.text("товаров");
+      else if( basketCnt === 1 )
+        basketText.text("товар");
+      else if( basketCnt > 1 && basketCnt <= 4 )
+        basketText.text("товара ");
+      else
+        basketText.text("товаров");
+    })();
 
 /*TODO
 

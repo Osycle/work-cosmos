@@ -165,7 +165,8 @@
 	padding: 5px 15px;
 	//background-color: $color-1;
 	font-family: $font-family-1;
-	a{
+
+	a, button{
 		line-height: normal;
 		padding: 7px 25px;
 		display: block;
@@ -916,11 +917,13 @@ $header-min-menu: 100px;
 	  top: 0;
 	  i{
 	  	color: white;	
+	  	font-size: 25px;
 	  }
-	  //background: rgba($color-1, 0.6);
 	  z-index: 1;
 	}
-
+	.basket-circle{
+		top: 1px;
+	}
 }
 .mm-navbar{
 	position: relative;
@@ -1765,7 +1768,10 @@ a[target="_blank"]{
 		color: $color-2;
 		font-weight: 800;
 		text-transform: uppercase;
-		a{
+		a, button{
+			padding: 8px 0px;
+		}
+		&>:first-child{
 			padding: 8px 0px;
 		}
 		&:hover{
@@ -2379,7 +2385,12 @@ label{
 		}
 	}
 }
-
+.checkout-input, .checkout-radio{
+	input, label{
+		width: auto;
+		display: inline-block;
+	}
+}
 
 
 

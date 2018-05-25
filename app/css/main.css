@@ -11586,7 +11586,7 @@ http://flickity.metafizzy.co
   text-align: center;
   padding: 5px 15px;
   font-family: "Open Sans"; }
-  .btn-style a, .btn-def a, .btn-icon a, .btn-opacity a {
+  .btn-style a, .btn-def a, .btn-icon a, .btn-opacity a, .btn-style button, .btn-def button, .btn-icon button, .btn-opacity button {
     line-height: normal;
     padding: 7px 25px;
     display: block;
@@ -12212,7 +12212,11 @@ http://flickity.metafizzy.co
   top: 0;
   z-index: 1; }
   .mm-menu .user-panel i {
-    color: white; }
+    color: white;
+    font-size: 25px; }
+
+.mm-menu .basket-circle {
+  top: 1px; }
 
 .mm-navbar {
   position: relative; }
@@ -12830,7 +12834,9 @@ a[target="_blank"] {
   color: #9a4781;
   font-weight: 800;
   text-transform: uppercase; }
-  .short-delivery-items .btn-def a {
+  .short-delivery-items .btn-def a, .short-delivery-items .btn-def button {
+    padding: 8px 0px; }
+  .short-delivery-items .btn-def > :first-child {
     padding: 8px 0px; }
   .short-delivery-items .btn-def:hover {
     opacity: 1; }
@@ -13317,6 +13323,10 @@ label {
 .reg-form .checkout-checkbox input {
   width: 15px;
   height: 15px; }
+
+.checkout-input input, .checkout-input label, .checkout-radio input, .checkout-radio label {
+  width: auto;
+  display: inline-block; }
 
 .basket-items figure .img-content .img {
   -webkit-filter: drop-shadow(0 0 10px #eee);
