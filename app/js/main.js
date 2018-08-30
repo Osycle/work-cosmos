@@ -188,9 +188,6 @@
       })
       //TODO
       var fctData = fct.data("flickity");
-      $(fct).on('ready.flickity', function() {
-        console.log('Flickity ready');
-      });
       $(document).on("click", "[flickity='resize']", function() {
         setTimeout(function() {
           fct.flickity('resize');
