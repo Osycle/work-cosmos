@@ -341,8 +341,8 @@
 										 --- HEADER ---
 */
 
-$header-top-height: 60px; 
-$header-middle-height: 135px; 
+$header-top-height: 40px; 
+$header-middle-height: 85px; 
 $header-bottom-height: 45px;
 $header-min-menu: 100px;
 #header{
@@ -404,7 +404,7 @@ $header-min-menu: 100px;
 	&.scrolled, &.header-pages{
 		.header-middle-content{
 			@extend .default-shadow ;
-    	top: -60px;
+    	top: -+($header-top-height+7);
 			.logo{
 				height: 80px;
 			}
@@ -418,13 +418,13 @@ $header-min-menu: 100px;
 			}
 		}
 		.header-top-content{
-			top: -60px;
+			top: -+($header-top-height+7);
 			border-radius: 0 0 3px 3px;
 			transform: perspective(1800px) rotateX(-90deg);	
 			transform-origin: 50% 0;
 		}
 		.header-bottom-content{
-			top: -60px;
+			top: -+($header-top-height+7);
 			@extend .default-shadow ;
 		}
 	}
@@ -495,7 +495,7 @@ $header-min-menu: 100px;
 		position: absolute;
 		background-color: $color-2;
 		right: -13px;
-		top: 13px;
+		top: 3px;
 		.bakset-cnt{
 			line-height: 22px;
 		}
@@ -504,7 +504,7 @@ $header-min-menu: 100px;
 		background-color: $color-1;
 		width: 50px;
 		border-radius: 4px;
-		height: 50px;
+		height: 30px;
 		.fa{
 			font-size: 20px;
 			color: white;
@@ -724,7 +724,7 @@ $header-min-menu: 100px;
 .submenu-box{
 	overflow: hidden;
 	padding-top: 10px;
-	width: 800px;
+	width: 960px;
 	position: absolute;
 	color: black;
 	transition: all 0.4s ease-out 0.1s;
@@ -799,6 +799,9 @@ $header-min-menu: 100px;
 		h3{
 			border-bottom: 2px solid transparent;
 			transition: all 0.3s ease-in-out;
+			a{
+				color: #ff78be;
+			}
 		}
 		&:hover{
 			h3{
@@ -816,7 +819,7 @@ $header-min-menu: 100px;
 			line-height: 110%;
 		}
 		&::first-letter{
-			font-weight:700;
+			//font-weight:700;
 		}
 	}
 }
@@ -956,7 +959,7 @@ $header-min-menu: 100px;
 	form{
 		position: relative;
 		.search-input{
-			width: 240px;
+			//width: 240px;
 			height: 23px;
 			margin-left: auto;
 		}
@@ -965,9 +968,11 @@ $header-min-menu: 100px;
 			font-size: 0.9em;
 			border: 0;
 			background-color: rgba(white, 1);
+			border: 1px solid $color-1;
 			height: 100%;
 			width: 100%;
-			padding: 0 15px;
+			padding: 0 7px;
+			padding-right: 30px;
 		}
 	}
 	button{		
