@@ -11373,14 +11373,14 @@ http://flickity.metafizzy.co
   -webkit-box-shadow: 0 3px 20px -10px black;
   box-shadow: 0 3px 20px -10px black; }
 
-.fuller, .claf, [data-flicker]:before, .menu li:before, .menu li:after, .menu-bottom ul:not(.sublist) > li:before, .short-advantages figure .icon:before, html body .tp-bullets.simplebullets.round .bullet:before, .cell-hover, .hover-content .cell-hover, .min-menu-header .wrapper-bg, .fullscreen-container .wrapper-bg {
+.fuller, .claf, [data-flicker]:before, .menu li:before, .menu li:after, .menu-bottom ul:not(.sublist) > li:before, .short-advantages figure .icon:before, .jackdaw:before, html body .tp-bullets.simplebullets.round .bullet:before, .cell-hover, .hover-content .cell-hover, .min-menu-header .wrapper-bg, .fullscreen-container .wrapper-bg {
   height: 100%;
   width: 100%;
   position: absolute;
   top: 0;
   left: 0; }
 
-.claf, [data-flicker]:before, .menu li:before, .menu li:after, .menu-bottom ul:not(.sublist) > li:before, .short-advantages figure .icon:before, html body .tp-bullets.simplebullets.round .bullet:before {
+.claf, [data-flicker]:before, .menu li:before, .menu li:after, .menu-bottom ul:not(.sublist) > li:before, .short-advantages figure .icon:before, .jackdaw:before, html body .tp-bullets.simplebullets.round .bullet:before {
   content: ""; }
 
 .clafclear {
@@ -11726,7 +11726,7 @@ http://flickity.metafizzy.co
       position: fixed; } }
 
 .header-hidden {
-  height: 170px;
+  height: 177px;
   display: block; }
   @media (max-width: 991px) {
     .header-hidden {
@@ -11909,7 +11909,7 @@ http://flickity.metafizzy.co
     right: -15px; }
 
 .menu {
-  height: 40px;
+  height: 47px;
   text-align: right;
   position: relative; }
   .menu ul:not([class*="sub-menu"]) > li {
@@ -12520,9 +12520,6 @@ hr {
   .main-content .entry-content ul {
     margin: 15px 0; }
 
-.breadcrumb-container {
-  margin: 30px 0; }
-
 a[target="_blank"] {
   color: #ff78be;
   text-decoration: underline; }
@@ -12700,7 +12697,6 @@ a[target="_blank"] {
 
 .productions-tab .flickity-viewport {
   width: 100%;
-  height: 465px !important;
   margin: 45px 0;
   text-align: center; }
 
@@ -12732,7 +12728,12 @@ a[target="_blank"] {
   .productions-tab figure .img-content {
     height: 220px; }
     .productions-tab figure .img-content img {
-      width: 220px; }
+      width: 220px;
+      z-index: 0;
+      position: relative; }
+  .productions-tab figure .desc-content {
+    z-index: 1;
+    position: relative; }
 
 .hover-product.hover-content {
   background-color: white;
@@ -12787,6 +12788,18 @@ a[target="_blank"] {
       .hover-product.hover-content:hover .desc-content:hover h3, .hover-product.hover-content:hover .desc-content:hover p {
         text-decoration: underline; }
 
+.jackdaw {
+  position: relative; }
+  .jackdaw:before {
+    position: absolute;
+    width: 16px;
+    -webkit-transform: rotate(-40deg);
+    -ms-transform: rotate(-40deg);
+    transform: rotate(-40deg);
+    height: 10px;
+    border-bottom: 1px solid green;
+    border-left: 1px solid green; }
+
 .productions-tablist {
   position: relative;
   text-transform: uppercase; }
@@ -12811,7 +12824,7 @@ a[target="_blank"] {
       top: -40px; } }
 
 .short-delivery {
-  background-image: url("../img/bg/short-delivery.jpg"); }
+  background-color: #9d4e85; }
 
 .short-delivery-items h4 {
   margin: 0; }
@@ -13061,6 +13074,27 @@ a[target="_blank"] {
   .products-items figure .img-content img {
     width: 220px; }
 
+.products-selection .field {
+  padding-left: 5px;
+  padding-right: 5px; }
+
+.products-selection form > .row {
+  margin-left: -5px;
+  margin-right: -5px; }
+
+.products-selection .fields-items {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  @media (max-width: 991px) {
+    .products-selection .fields-items {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column; } }
+
 .products-selection form {
   color: white; }
   .products-selection form select {
@@ -13198,8 +13232,8 @@ a[target="_blank"] {
       background-color: white; }
 
 .products-tabs .tab-content {
-  padding: 30px 10px;
-  min-height: 300px; }
+  padding: 15px 10px  10px 10px;
+  /* min-height: 70px; */ }
 
 .short-reviews-carousel h2 {
   font-weight: 700;
@@ -13320,6 +13354,9 @@ label {
 
 .user-settings label, .user-settings input {
   width: 100%; }
+
+.user-settings .select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 32px; }
 
 .reg-form .checkout-checkbox input {
   width: 15px;

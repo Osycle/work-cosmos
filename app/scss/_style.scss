@@ -341,7 +341,7 @@
 										 --- HEADER ---
 */
 
-$header-top-height: 40px; 
+$header-top-height: 47px; 
 $header-middle-height: 85px; 
 $header-bottom-height: 45px;
 $header-min-menu: 100px;
@@ -404,7 +404,7 @@ $header-min-menu: 100px;
 	&.scrolled, &.header-pages{
 		.header-middle-content{
 			@extend .default-shadow ;
-    	top: -+($header-top-height+7);
+    	top: -+($header-top-height);
 			.logo{
 				height: 80px;
 			}
@@ -418,13 +418,13 @@ $header-min-menu: 100px;
 			}
 		}
 		.header-top-content{
-			top: -+($header-top-height+7);
+			top: -+($header-top-height);
 			border-radius: 0 0 3px 3px;
 			transform: perspective(1800px) rotateX(-90deg);	
 			transform-origin: 50% 0;
 		}
 		.header-bottom-content{
-			top: -+($header-top-height+7);
+			top: -+($header-top-height);
 			@extend .default-shadow ;
 		}
 	}
@@ -1329,9 +1329,7 @@ body, #page{
 		}
 	}
 }
-.breadcrumb-container{
-	margin: 30px 0;
-}
+
 
 a[target="_blank"]{
 	color: $color-1;
@@ -1630,7 +1628,7 @@ a[target="_blank"]{
 .productions-tab{
 	.flickity-viewport{
 		width: 100%;
-		height: 465px !important;
+		//height: 465px !important;
 		margin: 45px 0;
 		text-align: center;
 	}
@@ -1648,7 +1646,13 @@ a[target="_blank"]{
 			height: 220px;
 			img{
 				width: 220px;
+				z-index: 0;
+    		position: relative;
 			}
+		}
+		.desc-content{
+	    z-index: 1;
+	    position: relative;
 		}
 	}
 }
@@ -1711,6 +1715,18 @@ a[target="_blank"]{
 		}
 	}
 }
+.jackdaw{
+	position: relative;
+	&:before{
+		@extend .claf;
+		position: absolute;
+		width: 16px;
+		transform: rotate(-40deg);
+		height: 10px;
+		border-bottom: 1px solid green;
+		border-left: 1px solid green;
+	}
+}
 .productions-tablist{
 	position: relative;
 	text-transform: uppercase;
@@ -1748,7 +1764,7 @@ a[target="_blank"]{
 
 //.short-delivery
 .short-delivery{
-	background-image:url("../img/bg/short-delivery.jpg");
+	background-color: #9d4e85;
 }
 .short-delivery-items{
 	h4{
@@ -2031,8 +2047,22 @@ a[target="_blank"]{
 	}
 }
 .products-selection{
+	.field{
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	form > .row{
+		margin-left: -5px;
+		margin-right: -5px;
+	}
+	.fields-items{
+		display: flex;
+		@media (max-width: 991px) {
+			flex-direction: column;
+		}
+	}
 	form{
-		color: white ;
+		color: white;
 		select{
 			min-width: 180px;
 			margin: 15px 10%;
@@ -2211,8 +2241,8 @@ a[target="_blank"]{
 		}
 	}
 	.tab-content{
-		padding:30px 10px;
-		min-height: 300px;
+		padding: 15px 10px  10px 10px;
+		/* min-height: 70px; */
 	}
 }
 
@@ -2380,6 +2410,9 @@ label{
 .user-settings{
 	label, input{
 		width: 100%;
+	}
+	.select2-container--default .select2-selection--single .select2-selection__rendered{
+		line-height: 32px;
 	}
 }
 .reg-form{
