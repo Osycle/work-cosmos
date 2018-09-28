@@ -188,6 +188,9 @@
       })
       //TODO
       var fctData = fct.data("flickity");
+      $(fct).on('ready.flickity', function() {
+        console.log('Flickity ready');
+      });
       $(document).on("click", "[flickity='resize']", function() {
         setTimeout(function() {
           fct.flickity('resize');
@@ -306,6 +309,17 @@
             $(flkty.selectedElement).css("pointer-events", "");
           })
 
+          var colorList = $('.products-colors .list-inline') || null;
+          if( colorList ){
+            colorList.find('li').attr("role", "button");
+            colorList.on( 'click', 'li', function() {
+                var index = $(this).index();
+                crs.flickity( 'select', index );
+                colorList.find('li').removeClass("active")
+                $(this).addClass("active");
+            });
+          }
+
           $(carouselNav).eq(i).flickity({
             imagesLoaded: true,
             initialIndex: 0,
@@ -328,7 +342,10 @@
         productsArticle.find(".carousel-main a").attr("data-fancybox", "gallery");
     }
 
-
+    // SMOTHSCROLL-LINK
+    smoothScroll.init({
+      easing: 'easeInOutCubic'
+    });
 
 
     // Прибавление-убавление значении
@@ -398,111 +415,6 @@
       else
         basketText.text("товаров");
     })();
-
-/*TODO
-
-
-    window.Basket = {
-      storageName: location.hostname + "-basket",
-      orders: [],
-      basketModal: ".basket-modal-items",
-      json: localStorage[this.storageName],
-      //initBasket
-      initBasket: function() {
-        if (localStorage[this.storageName])
-          this.orders = JSON.parse(localStorage[this.storageName]);
-        for (var i = 0; i < this.orders.length; i++)
-          $(this.basketModal).append(this.orders[i].template)
-        this.changeBasket();
-      },
-      //changeBasket
-      changeBasket: function() {
-        localStorage[this.storageName] = JSON.stringify(this.orders);
-        $(".bakset-cnt").text(this.orders.length);
-        if (this.orders.length === 0)
-          $(".if-clear").fadeIn(1000);
-        else
-          $(".if-clear").hide();
-      },
-      checkOrderid: function(id) {
-        for (var i = 0; i < this.orders.length; i++)
-          if (this.orders[i].id == id)
-            return true;
-        return false;
-      },
-      //appedBasket
-      appedBasket: function(button) {
-        var that = this;
-        var orderid = button.attr("data-order-id");
-        var templateid = button.attr("data-order-templateid");
-        var template = $("[data-templateid='" + templateid + "']").eq(0);
-        var basketArea = $(button.attr("data-basket"));
-        var templateBasket = basketArea.find("[data-templateid='" + templateid + "']") || null;
-
-        if (Basket.checkOrderid(orderid))
-          return;
-
-        function __appended() {
-          var order = {
-            id: orderid,
-            template: template[0].outerHTML
-          }
-          Basket.orders.push(order);
-          localStorage[Basket.storageName] = JSON.stringify(Basket.orders);
-          basketArea.append(template);
-        }
-
-
-        if (templateBasket.length != 0) {
-          templateBasket.slideDown(300, function() {
-            __appended()
-            that.changeBasket();
-          });
-        } else {
-          __appended()
-          that.changeBasket();
-        }
-
-      },
-      //removeBasketItem
-      removeBasketItem: function(id, f) {
-        this.orders = this.orders.filter(function(el, i) {
-          return el.id != id;
-        })
-        console.log(this.orders)
-        this.changeBasket();
-        if (typeof f === "function")
-          f();
-      }
-    }
-    Basket.initBasket();
-
-    $("[data-order-del]").on("click", function() {
-      var that = $(this);
-      var orderId = that.attr("data-order-del");
-      var templateId = that.attr("data-template-del");
-
-      function callBack() {
-        $("[data-templateid='" + templateId + "']").slideUp(400);
-      }
-      Basket.removeBasketItem(orderId, callBack);
-    })
-
-    $(document).on("click", ".link-cart", function() {
-      var that = $(this);
-      Basket.appedBasket(that);
-    })
-
-
-*/
-
-
-
-
-
-
-
-
 
 
 
@@ -723,90 +635,30 @@ setTimeout(function() {
 
 
 
-String.prototype.unescape = function() {
-  var str;
-  var winalpha = {
-    E0: '%D0%B0',
-    E1: '%D0%B1',
-    E2: '%D0%B2',
-    E3: '%D0%B3',
-    E4: '%D0%B4',
-    E5: '%D0%B5',
-    B8: '%D1%91',
-    E6: '%D0%B6',
-    E7: '%D0%B7',
-    E8: '%D0%B8',
-    E9: '%D0%B9',
-    EA: '%D0%BA',
-    EB: '%D0%BB',
-    EC: '%D0%BC',
-    ED: '%D0%BD',
-    EE: '%D0%BE',
-    EF: '%D0%BF',
-    F0: '%D1%80',
-    F1: '%D1%81',
-    F2: '%D1%82',
-    F3: '%D1%83',
-    F4: '%D1%84',
-    F5: '%D1%85',
-    F6: '%D1%86',
-    F7: '%D1%87',
-    F8: '%D1%88',
-    F9: '%D1%89',
-    FA: '%D1%8A',
-    FB: '%D1%8B',
-    FC: '%D1%8C',
-    FD: '%D1%8D',
-    FE: '%D1%8E',
-    FF: '%D1%8F',
-    C0: '%D0%90',
-    C1: '%D0%91',
-    C2: '%D0%92',
-    C3: '%D0%93',
-    C4: '%D0%94',
-    C5: '%D0%95',
-    A8: '%D0%81',
-    C6: '%D0%96',
-    C7: '%D0%97',
-    C8: '%D0%98',
-    C9: '%D0%99',
-    CA: '%D0%9A',
-    CB: '%D0%9B',
-    CC: '%D0%9C',
-    CD: '%D0%9D',
-    CE: '%D0%9E',
-    CF: '%D0%9F',
-    D0: '%D0%A0',
-    D1: '%D0%A1',
-    D2: '%D0%A2',
-    D3: '%D0%A3',
-    D4: '%D0%A4',
-    D5: '%D0%A5',
-    D6: '%D0%A6',
-    D7: '%D0%A7',
-    D8: '%D0%A8',
-    D9: '%D0%A9',
-    DA: '%D0%AA',
-    DB: '%D0%AB',
-    DC: '%D0%AC',
-    DD: '%D0%AD',
-    DE: '%D0%AE',
-    DF: '%D0%AF'
-  };
-  str = this.replace(/%/g, '$');
-  for (var i in winalpha) {
-    //console.log(i);
-    str = str.replace(new RegExp('[\$]' + i, 'g'), winalpha[i]);
-  }
-  //console.log(str);
-  str = str.replace(/\$/g, '%');
-  str = decodeURIComponent(str);
-  return str;
-}
+
+$(document).on('click', '.zakaz', function(){
+
+    var name = $(this).data("title");
+    
+    $("#add_name").text(name);
+    $(".subject").val(name);  
+}); 
 
 
+/*$(document).ready(function(){ 
+         
+    $(document).on('click', '.color-link', function() {
+        
+        var color = $(this).data('color');
+        console.log(color);
+        
+        $('.color-link.'+ color).toggleClass('active');
 
-
+       
+        
+    });
+ 
+});*/
 
 function checkSm() {
   return $(document).width() <= 991;

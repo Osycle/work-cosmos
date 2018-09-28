@@ -62,6 +62,7 @@ gulp.task('scripts', () =>
 			//app+'/js/skrollr.min.js',
 			//app+'/js/owl.carousel.min.js',
 			app+'/js/jquery.fancybox.js',
+			app+'/js/smooth-scroll-link.min.js',
 			//app+'/js/jquery.jcarousel.js',
 			app+'/js/classie.js',
 			app+'/js/masonry.pkgd.min.js',

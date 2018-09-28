@@ -12049,9 +12049,9 @@ http://flickity.metafizzy.co
   width: 960px;
   position: absolute;
   color: black;
-  -webkit-transition: all 0.4s ease-out 0.1s;
-  -o-transition: all 0.4s ease-out 0.1s;
-  transition: all 0.4s ease-out 0.1s;
+  -webkit-transition: all 0.3s ease-out 0.0s;
+  -o-transition: all 0.3s ease-out 0.0s;
+  transition: all 0.3s ease-out 0.0s;
   opacity: 0;
   -webkit-transform-origin: 0;
   -ms-transform-origin: 0;
@@ -12954,6 +12954,7 @@ a[target="_blank"] {
 .subscribe .form-content input {
   border: 0;
   height: 50px;
+  z-index: 1;
   font-size: 14px;
   background-color: #eee; }
 
@@ -12962,7 +12963,7 @@ a[target="_blank"] {
 
 .subscribe .btn-search {
   position: absolute;
-  background-color: #9a4781;
+  background-color: #ff78be;
   -webkit-border-radius: 25px;
   border-radius: 25px;
   color: white;
@@ -12970,6 +12971,7 @@ a[target="_blank"] {
   height: 100%;
   padding: 5px 20px;
   top: 0;
+  z-index: 1;
   right: 0; }
 
 .subscribe .search-input {
@@ -13411,6 +13413,31 @@ label {
       -webkit-background-size: contain;
       background-size: contain; } }
 
+.btn-scroll {
+  position: fixed;
+  z-index: 10;
+  font-size: 25px;
+  background-color: rgba(255, 120, 190, 0.5);
+  bottom: 30px;
+  left: 30px;
+  color: black;
+  -webkit-box-shadow: 0px 2px 12px -2px black;
+  box-shadow: 0px 2px 12px -2px black;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  opacity: 1; }
+  .btn-scroll a {
+    display: block;
+    padding: 3px 13px; }
+  .btn-scroll.scrolled {
+    opacity: 1;
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9); }
+
 /*
 										 ---FOOTER---
 */
@@ -13423,7 +13450,7 @@ label {
   background-position-y: bottom; }
 
 .footer-socicons {
-  font-size: 25px; }
+  font-size: 32px; }
 
 .footer-content .payicons li {
   border-right: 1px solid rgba(255, 120, 190, 0.5); }
