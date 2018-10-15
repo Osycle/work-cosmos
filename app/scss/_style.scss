@@ -1732,7 +1732,21 @@ a[target="_blank"]{
 	img{
 		transition: all 0.8s ease;
 	}
-
+	.link-item{
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    //background: rgba(#a56715, 0.5);
+	}
+	.link-icon{
+		z-index: 3;
+		position: relative;
+		top: -15px;
+	}
 	.ls-shopping-bag{
 		position: relative;
 		top: 3px;
@@ -1755,31 +1769,33 @@ a[target="_blank"]{
     	background-color: $color-2;
     }
 	}
+	.desc-content{
+		pointer-events: none;
+	}
 	.cell-hover{
 		transition: 0.7s ease;
-		background-color: rgba($color-1, 0.7);
+		//background-color: rgba($color-1, 0.7);
 		pointer-events: auto;
 		a:focus{
 			outline: none;
 		}
 	}
 	&:hover{
+		.cell-hover{
+			z-index: 23;
+		}
 		img{
 			transform: scale(1.1);
 		}
 		.desc-content{
-	    z-index: 1;
-	    transition: all 0.3s ease-in-out;
+	    z-index: 24;
 	    position: relative;
 	    color: white;
 	    .price{
 	    	color: white;
 	    }
 	  	&:hover{
-				color: rgba(white, 0.5);
-				h3, p{
-					text-decoration: underline;
-				}
+				color:	white;
 			}
 		}
 	}

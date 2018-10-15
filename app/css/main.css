@@ -12814,6 +12814,18 @@ a[target="_blank"] {
     -webkit-transition: all 0.8s ease;
     -o-transition: all 0.8s ease;
     transition: all 0.8s ease; }
+  .hover-product.hover-content .link-item {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .hover-product.hover-content .link-icon {
+    z-index: 3;
+    position: relative;
+    top: -15px; }
   .hover-product.hover-content .ls-shopping-bag {
     position: relative;
     top: 3px; }
@@ -12833,31 +12845,29 @@ a[target="_blank"] {
     .hover-product.hover-content .circle:hover {
       color: white;
       background-color: #9a4781; }
+  .hover-product.hover-content .desc-content {
+    pointer-events: none; }
   .hover-product.hover-content .cell-hover {
     -webkit-transition: 0.7s ease;
     -o-transition: 0.7s ease;
     transition: 0.7s ease;
-    background-color: rgba(255, 120, 190, 0.7);
     pointer-events: auto; }
     .hover-product.hover-content .cell-hover a:focus {
       outline: none; }
+  .hover-product.hover-content:hover .cell-hover {
+    z-index: 23; }
   .hover-product.hover-content:hover img {
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1); }
   .hover-product.hover-content:hover .desc-content {
-    z-index: 1;
-    -webkit-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+    z-index: 24;
     position: relative;
     color: white; }
     .hover-product.hover-content:hover .desc-content .price {
       color: white; }
     .hover-product.hover-content:hover .desc-content:hover {
-      color: rgba(255, 255, 255, 0.5); }
-      .hover-product.hover-content:hover .desc-content:hover h3, .hover-product.hover-content:hover .desc-content:hover p {
-        text-decoration: underline; }
+      color: white; }
 
 .jackdaw {
   position: relative; }
