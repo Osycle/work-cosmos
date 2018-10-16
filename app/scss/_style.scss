@@ -209,7 +209,9 @@
 }
 
 
-
+.btn{
+	border-radius: 0;
+}
 .btn-opacity{
 	@extend .btn-style;
 	background-color: transparent;
@@ -1069,7 +1071,6 @@ $header-min-menu: 80px;
 		right: -5px;
     top: 0;
     z-index: 1;
-    border-radius: 0 5px;
   	&:focus, &:active{
   		outline: none;
 			box-shadow: none;
@@ -1992,6 +1993,10 @@ a[target="_blank"]{
 			padding: 5px 12px;
 			font-size: 12px;
 		}
+		.bg-wrapper{
+			background-color: transparent;
+			box-shadow: none;
+		}
 	}
 }
 
@@ -2047,16 +2052,12 @@ a[target="_blank"]{
 	}
 	.input{
 		display: inline-block;
-		
 		height: 42px;
 		input{
 			height: 100%;
 		}
 	}
 	.btn-content{
-		.btn-def{
-			border-radius: 5px;
-		}
 		button{
 			padding: 6px 0;
 		}
@@ -2445,6 +2446,7 @@ a[target="_blank"]{
 label{
 	width: 100%;
 }
+
 .user-settings{
 	label, input{
 		width: 100%;
@@ -2468,6 +2470,15 @@ label{
 	}
 }
 
+
+.input-content{
+	display: flex;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	@media (max-width:991px) {
+		flex-direction: column;
+	}
+}
 
 
 
@@ -2590,6 +2601,19 @@ label{
 				border-color: transparent;
 			}
 		}
+	}
+	@media (max-width:991px) {
+		.payicons{
+			li{
+				border: 0;
+				width: 100%;
+			}
+		}
+	}
+}
+.footer-logo{
+	@media (max-width: 991px){
+		display: none;
 	}
 }
 
@@ -2863,7 +2887,10 @@ html body{
 
 
 
-
+//select2
+.select2-container--default .select2-selection--single{
+	border-radius: 0;
+}
 
 
 
