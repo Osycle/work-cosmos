@@ -11809,6 +11809,58 @@ http://flickity.metafizzy.co
 .header-scroll.scrolled .header-bottom-content, .header-scroll.header-pages .header-bottom-content {
   top: -47px; }
 
+.megamenu {
+  color: black; }
+  .megamenu .submenu-box-wrapper {
+    padding: 0px 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  .megamenu .megasubmenu-nav {
+    width: 30%;
+    background-color: #eee; }
+    .megamenu .megasubmenu-nav .fa, .megamenu .megasubmenu-nav .short-reviews-carousel:before, .megamenu .megasubmenu-nav .short-reviews-carousel:after {
+      padding-left: 10px;
+      vertical-align: middle;
+      position: absolute;
+      right: 10px;
+      top: 9px; }
+    .megamenu .megasubmenu-nav ul:not(.sublist) li a {
+      padding-top: 5px;
+      padding-bottom: 5px; }
+  .megamenu .megasubmenu-items {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 70%; }
+    .megamenu .megasubmenu-items ul {
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+      column-count: 3; }
+    .megamenu .megasubmenu-items ul:not(.sublist) li a {
+      padding-top: 5px;
+      padding-bottom: 5px; }
+  .megamenu .megasubmenu-item {
+    -webkit-transition: display 0s ease 1s, opacity 0.4s ease-in-out;
+    -o-transition: display 0s ease 1s, opacity 0.4s ease-in-out;
+    transition: display 0s ease 1s, opacity 0.4s ease-in-out;
+    opacity: 0;
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+    visibility: hidden;
+    display: none; }
+    .megamenu .megasubmenu-item.is-hover {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+      -webkit-transition: display 0s ease 1s, opacity 0.4s ease-in-out;
+      -o-transition: display 0s ease 1s, opacity 0.4s ease-in-out;
+      transition: display 0s ease 1s, opacity 0.4s ease-in-out;
+      visibility: visible;
+      display: block; }
+
 .logo {
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -12022,7 +12074,6 @@ http://flickity.metafizzy.co
     position: relative;
     min-width: 130px;
     font-weight: 600;
-    color: white;
     -webkit-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out; }
@@ -13188,6 +13239,9 @@ a[target="_blank"] {
     .products-article .carousel-main img {
       height: 250px; } }
 
+.oldprice {
+  text-decoration: line-through; }
+
 .products-article.load .carousel-main .carousel-cell {
   opacity: 0;
   -webkit-transition: all 0.3s ease-in-out;
@@ -13415,7 +13469,15 @@ label {
   display: -ms-flexbox;
   display: flex;
   margin-top: 5px;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  -webkit-flex-flow: wrap;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap; }
+  .input-content font {
+    width: 100%; }
+  .input-content .select2 {
+    display: block;
+    margin: auto; }
   @media (max-width: 991px) {
     .input-content {
       -webkit-box-orient: vertical;
@@ -13423,6 +13485,13 @@ label {
       -webkit-flex-direction: column;
       -ms-flex-direction: column;
       flex-direction: column; } }
+  @media (min-width: 992px) {
+    .input-content label, .input-content input, .input-content textarea {
+      -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+      flex-basis: 50%; }
+    .input-content .select2 {
+      width: 50% !important; } }
 
 .basket-items figure .img-content .img {
   -webkit-filter: drop-shadow(0 0 10px #eee);

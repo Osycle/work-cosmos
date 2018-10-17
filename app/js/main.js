@@ -342,6 +342,14 @@
         productsArticle.find(".carousel-main a").attr("data-fancybox", "gallery");
     }
 
+    $(".megasubmenu-nav li").hover(function(){
+
+      $(".megasubmenu-items .megasubmenu-item").removeClass("is-hover");
+      $(".megasubmenu-items .megasubmenu-item").eq( $(this).index() ).addClass("is-hover");
+
+      console.log( $(this).index() )
+    },function(){})
+
     // SMOTHSCROLL-LINK
     smoothScroll.init({
       easing: 'easeInOutCubic'
