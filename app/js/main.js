@@ -344,8 +344,9 @@
 
     $(".megasubmenu-nav li").hover(function(){
 
-      $(".megasubmenu-items .megasubmenu-item").removeClass("is-hover");
-      $(".megasubmenu-items .megasubmenu-item").eq( $(this).index() ).addClass("is-hover");
+
+      $(".megasubmenu-items .megasubmenu-item").add( $(this).siblings() ).removeClass("is-hover");
+      $(".megasubmenu-items .megasubmenu-item").eq( $(this).index() ).add( $(this) ).addClass("is-hover");
 
       console.log( $(this).index() )
     },function(){})
