@@ -428,7 +428,21 @@
 
 
 
-
+    /*AJAX вход*/
+    window.signIn = function(form){
+      var data = form.serialize();
+      $.ajax({
+        type: "POST",
+        url: location.href,
+        data: data,
+        success: function(e, d){console.log(e, d)},
+        //contentType: "Content-Type:application/json;",
+        statusCode: {
+          404: function(){alert( "page not found" );}
+        },
+        complete: function(){}
+      });
+    }
 
     function onLoaded() {
       //MASONRY
