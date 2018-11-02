@@ -442,7 +442,7 @@
         },
         complete: function(){}
       });
-    }
+    };
 
     function onLoaded() {
       //MASONRY
@@ -453,7 +453,6 @@
           percentPosition: true
         });
       }
-
     }
 
     //SCROLL
