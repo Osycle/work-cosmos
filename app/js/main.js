@@ -341,14 +341,13 @@
       if( checkSm() )
         productsArticle.find(".carousel-main a").attr("data-fancybox", "gallery");
     }
-
+    //$(".menu-bottom").children("ul").children("li")
     $(".megasubmenu-nav li").hover(function(){
-
-
-      $(".megasubmenu-items .megasubmenu-item").add( $(this).siblings() ).removeClass("is-hover");
-      $(".megasubmenu-items .megasubmenu-item").eq( $(this).index() ).add( $(this) ).addClass("is-hover");
-
-      console.log( $(this).index() )
+      var megasubmenuItems = $(this).closest(".megasubmenu-nav").siblings(".megasubmenu-items").find(".megasubmenu-item") || null;
+      if( !megasubmenuItems ) 
+        return;
+      megasubmenuItems.add( $(this).siblings() ).removeClass("is-hover");
+      megasubmenuItems.eq( $(this).index() ).add( $(this) ).addClass("is-hover");
     },function(){})
 
     // SMOTHSCROLL-LINK
