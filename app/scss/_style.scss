@@ -915,9 +915,9 @@ $header-min-menu: 80px;
 		transition: display 0s ease 1s,
 								opacity 0.4s ease-in-out;
 		opacity: 0;
-		transform: translateY(-5px);
 		visibility: hidden;
 		display: none;
+		padding: 10px 0;
 		a{
 			padding: 7px 15px;
 			display: inline-block;
@@ -2542,7 +2542,7 @@ a[target="_blank"]{
 }
 
 
-//cabinet
+
 .user-control{
 	h2,h1{
 		margin: 0;
@@ -2587,7 +2587,11 @@ label{
 	}
 }
 
-
+.cabinet-user-content{
+	label{
+		flex-basis: 110px;
+	}
+}
 .input-content{
 	display: flex;
 	margin-top: 5px;
@@ -2604,7 +2608,7 @@ label{
 		flex-direction: column;
 	}
 	@media (min-width: 992px) {
-		label, input, textarea{
+		input:not([class*="pie-md-flex"]), textarea:not([class*="pie-md-flex"]){
 			flex-basis: 50%;
 		}
 		.select2{

@@ -12215,11 +12215,9 @@ http://flickity.metafizzy.co
     -o-transition: display 0s ease 1s, opacity 0.4s ease-in-out;
     transition: display 0s ease 1s, opacity 0.4s ease-in-out;
     opacity: 0;
-    -webkit-transform: translateY(-5px);
-    -ms-transform: translateY(-5px);
-    transform: translateY(-5px);
     visibility: hidden;
-    display: none; }
+    display: none;
+    padding: 10px 0; }
     .megamenu .megasubmenu-item a {
       padding: 7px 15px;
       display: inline-block;
@@ -13510,6 +13508,11 @@ label {
   width: auto;
   display: inline-block; }
 
+.cabinet-user-content label {
+  -webkit-flex-basis: 110px;
+  -ms-flex-preferred-size: 110px;
+  flex-basis: 110px; }
+
 .input-content {
   display: -webkit-box;
   display: -webkit-flex;
@@ -13533,7 +13536,7 @@ label {
       -ms-flex-direction: column;
       flex-direction: column; } }
   @media (min-width: 992px) {
-    .input-content label, .input-content input, .input-content textarea {
+    .input-content input:not([class*="pie-md-flex"]), .input-content textarea:not([class*="pie-md-flex"]) {
       -webkit-flex-basis: 50%;
       -ms-flex-preferred-size: 50%;
       flex-basis: 50%; }
