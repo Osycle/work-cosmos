@@ -341,7 +341,7 @@
       if( checkSm() )
         productsArticle.find(".carousel-main a").attr("data-fancybox", "gallery");
     }
-    //$(".menu-bottom").children("ul").children("li")
+
     $(".megasubmenu-nav li").hover(function(){
       var megasubmenuItems = $(this).closest(".megasubmenu-nav").siblings(".megasubmenu-items").find(".megasubmenu-item") || null;
       if( !megasubmenuItems ) 
@@ -430,11 +430,24 @@
     /*AJAX вход*/
     window.signIn = function(form){
       var data = form.serialize();
+      var responce;
       $.ajax({
         type: "POST",
         url: location.href,
         data: data,
-        success: function(e, d){console.log(e, d)},
+        success: function(responceText, e){
+          window.responceText = responceText;          
+          if( responceText.match(/<div class="message error">Ошибка/gim) ){
+            $("#form-entry").find(".info-err").text( "Ошибка. Неверный логин или пароль" );
+            console.log("Ошибка");
+          }
+          else{
+            $(".authorized").show();
+            $(".unauthorized").hide();
+            $("#form-entry").modal("hide");
+          }
+
+        },
         //contentType: "Content-Type:application/json;",
         statusCode: {
           404: function(){alert( "page not found" );}
@@ -442,6 +455,14 @@
         complete: function(){}
       });
     };
+
+    $("#sign-in-form button").on("click", function(){
+
+      signIn($("#sign-in-form"));
+
+
+    })
+
 
     function onLoaded() {
       //MASONRY
