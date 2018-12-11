@@ -306,7 +306,8 @@
 //--bg--
 
 .bg-texture-1{
-	background: url( "../img/bg/texture-1.jpg" );
+	//background: url( "../img/bg/texture-1.jpg" );
+	background-color: white;
 	background-position: 0 10px;
 	background-size: 160px;
 }
@@ -386,6 +387,7 @@ $header-min-menu: 80px;
 		height: $header-middle-height;
 		&>div{
 			width: 100%;
+			flex-basis: 100%;
 		}
 	}
 

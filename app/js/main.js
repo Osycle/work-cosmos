@@ -182,7 +182,7 @@
         resize: false,
         wrapAround: true,
         pageDots: false,
-        contain: false,
+        contain: true,
         percentPosition: true,
         cellAlign: 'center'
       })

@@ -11679,7 +11679,7 @@ http://flickity.metafizzy.co
   right: 0px; }
 
 .bg-texture-1, body, #page {
-  background: url("../img/bg/texture-1.jpg");
+  background-color: white;
   background-position: 0 10px;
   -webkit-background-size: 160px 160px;
   background-size: 160px; }
@@ -11761,7 +11761,10 @@ http://flickity.metafizzy.co
   align-items: center;
   height: 85px; }
   .header-middle-content .flex-content > div {
-    width: 100%; }
+    width: 100%;
+    -webkit-flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%; }
 
 .header-scroll .menu .phones, .header-scroll .desc-content, .header-scroll .img-content, .header-scroll img {
   -webkit-transition: all 0.35s ease-out;
