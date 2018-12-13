@@ -1012,8 +1012,8 @@ $header-min-menu: 80px;
     opacity: 0.05;
 	}
 	.min-menu-logo{
-		padding: 12px 0;
-		width: 150px;
+		padding: 18px 0;
+		//width: 150px;
 	}
 	.min-menu-bar{
 		padding: 2px 0;
@@ -1817,6 +1817,16 @@ a[target="_blank"]{
 			background-color: $color-1;	
 		}
 	}
+	@media (max-width: 991px) {
+		.field{
+			width: 100%;
+			margin-top: 5px;
+			margin-bottom: 5px;
+			input{
+				text-align: center;
+			}
+		}
+	}
 }
 
 
@@ -2177,7 +2187,7 @@ a[target="_blank"]{
 	.form-content{
 		input{
 			border: 0;
-			height: 50px;
+			height: 40px;
 			z-index: 1;
 			font-size: 14px;
 			background-color: #eee;
@@ -2271,6 +2281,21 @@ a[target="_blank"]{
 		height: 42px;
 		input{
 			height: 100%;
+		}
+	}
+	input{
+		@include placeholder-color($color-2);
+		&::-moz-placeholder { 
+			font-weight: 600;
+		}
+		&:-ms-input-placeholder { 
+			font-weight: 600;
+		}
+		&::-webkit-input-placeholder { 
+			font-weight: 600;
+		}
+		&::-ms-expand { 
+			font-weight: 600;
 		}
 	}
 	.btn-content{
@@ -2833,6 +2858,8 @@ label{
 	line-height: 170%;
 	background-repeat: no-repeat;
 	background-position-y: bottom;
+	padding-left: 0;
+	padding-right: 0;
 }
 .footer-socicons{
 	font-size: 32px;

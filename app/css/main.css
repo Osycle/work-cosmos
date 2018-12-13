@@ -12302,8 +12302,7 @@ http://flickity.metafizzy.co
     background-position: left;
     opacity: 0.05; }
   .min-menu-header .min-menu-logo {
-    padding: 12px 0;
-    width: 150px; }
+    padding: 18px 0; }
   .min-menu-header .min-menu-bar {
     padding: 2px 0; }
 
@@ -12893,6 +12892,14 @@ a[target="_blank"] {
     color: white;
     background-color: #ff78be; }
 
+@media (max-width: 991px) {
+  .products-selection .field {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px; }
+    .products-selection .field input {
+      text-align: center; } }
+
 /* productions-tab */
 .productions-tab .flickity-viewport {
   width: 100%;
@@ -13243,7 +13250,7 @@ a[target="_blank"] {
 
 .subscribe .form-content input {
   border: 0;
-  height: 50px;
+  height: 40px;
   z-index: 1;
   font-size: 14px;
   background-color: #eee; }
@@ -13310,6 +13317,32 @@ a[target="_blank"] {
   height: 42px; }
   .form-selection .input input {
     height: 100%; }
+
+.form-selection input::-moz-placeholder {
+  color: #9a4781;
+  opacity: 1; }
+
+.form-selection input:-ms-input-placeholder {
+  color: #9a4781; }
+
+.form-selection input::-webkit-input-placeholder {
+  color: #9a4781; }
+
+.form-selection input::-ms-expand {
+  border: 0;
+  background-color: transparent; }
+
+.form-selection input::-moz-placeholder {
+  font-weight: 600; }
+
+.form-selection input:-ms-input-placeholder {
+  font-weight: 600; }
+
+.form-selection input::-webkit-input-placeholder {
+  font-weight: 600; }
+
+.form-selection input::-ms-expand {
+  font-weight: 600; }
 
 .form-selection .btn-content button {
   padding: 6px 0; }
@@ -13734,7 +13767,9 @@ label {
   min-height: 150px;
   line-height: 170%;
   background-repeat: no-repeat;
-  background-position-y: bottom; }
+  background-position-y: bottom;
+  padding-left: 0;
+  padding-right: 0; }
 
 .footer-socicons {
   font-size: 32px; }
