@@ -48,12 +48,13 @@
 	margin-left: -+($mrow)+%;
 	margin-right: -+( $mrow )+%;
 //100/$item
-	#{$tag}{
-		margin-left:  ($mrow)+%;
-		margin-right:  ($mrow)+%;
+	#{$tag}, .boxes-cell{
+		&:not(.serried){
+			margin-left:  ($mrow)+%;
+			margin-right:  ($mrow)+%;
+		}
 		//width: ( ($width/$item)+( $item / ( $item * 10) ) )+%;
 		width: ($width/$item)+%;
-
 	}
 }
 
@@ -2075,12 +2076,15 @@ a[target="_blank"]{
 //.short-delivery
 .short-delivery{
 	background-color: #9d4e85;
+	@media (max-width: 991px) {
+		display: none;
+	}
 }
 .short-delivery-items{
 	h4{
 		margin: 0;
 	}
-	.img-content{
+	.img{
 		border-radius: 50%;
 		background-color: lighten($color-1, 5%);
 		color: white;
